@@ -1,0 +1,1204 @@
+{
+  "agents": [
+    {
+      "id": "A001",
+      "name": "Agent 001",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A002",
+      "name": "Agent 002",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A003",
+      "name": "Agent 003",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A004",
+      "name": "Agent 004",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A005",
+      "name": "Agent 005",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A006",
+      "name": "Agent 006",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A007",
+      "name": "Agent 007",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A008",
+      "name": "Agent 008",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A009",
+      "name": "Agent 009",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A010",
+      "name": "Agent 010",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A011",
+      "name": "Agent 011",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A012",
+      "name": "Agent 012",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A013",
+      "name": "Agent 013",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A014",
+      "name": "Agent 014",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A015",
+      "name": "Agent 015",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A016",
+      "name": "Agent 016",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A017",
+      "name": "Agent 017",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A018",
+      "name": "Agent 018",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A019",
+      "name": "Agent 019",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A020",
+      "name": "Agent 020",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A021",
+      "name": "Agent 021",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A022",
+      "name": "Agent 022",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A023",
+      "name": "Agent 023",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A024",
+      "name": "Agent 024",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A025",
+      "name": "Agent 025",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A026",
+      "name": "Agent 026",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A027",
+      "name": "Agent 027",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A028",
+      "name": "Agent 028",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A029",
+      "name": "Agent 029",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A030",
+      "name": "Agent 030",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A031",
+      "name": "Agent 031",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A032",
+      "name": "Agent 032",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A033",
+      "name": "Agent 033",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A034",
+      "name": "Agent 034",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A035",
+      "name": "Agent 035",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A036",
+      "name": "Agent 036",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A037",
+      "name": "Agent 037",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A038",
+      "name": "Agent 038",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A039",
+      "name": "Agent 039",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A040",
+      "name": "Agent 040",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A041",
+      "name": "Agent 041",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A042",
+      "name": "Agent 042",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A043",
+      "name": "Agent 043",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A044",
+      "name": "Agent 044",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A045",
+      "name": "Agent 045",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A046",
+      "name": "Agent 046",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A047",
+      "name": "Agent 047",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A048",
+      "name": "Agent 048",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A049",
+      "name": "Agent 049",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A050",
+      "name": "Agent 050",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A051",
+      "name": "Agent 051",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A052",
+      "name": "Agent 052",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A053",
+      "name": "Agent 053",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A054",
+      "name": "Agent 054",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A055",
+      "name": "Agent 055",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A056",
+      "name": "Agent 056",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A057",
+      "name": "Agent 057",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A058",
+      "name": "Agent 058",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A059",
+      "name": "Agent 059",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A060",
+      "name": "Agent 060",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A061",
+      "name": "Agent 061",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A062",
+      "name": "Agent 062",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A063",
+      "name": "Agent 063",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A064",
+      "name": "Agent 064",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A065",
+      "name": "Agent 065",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A066",
+      "name": "Agent 066",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A067",
+      "name": "Agent 067",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A068",
+      "name": "Agent 068",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A069",
+      "name": "Agent 069",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A070",
+      "name": "Agent 070",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A071",
+      "name": "Agent 071",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A072",
+      "name": "Agent 072",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A073",
+      "name": "Agent 073",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A074",
+      "name": "Agent 074",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A075",
+      "name": "Agent 075",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A076",
+      "name": "Agent 076",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A077",
+      "name": "Agent 077",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A078",
+      "name": "Agent 078",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A079",
+      "name": "Agent 079",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A080",
+      "name": "Agent 080",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A081",
+      "name": "Agent 081",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A082",
+      "name": "Agent 082",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A083",
+      "name": "Agent 083",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A084",
+      "name": "Agent 084",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A085",
+      "name": "Agent 085",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A086",
+      "name": "Agent 086",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A087",
+      "name": "Agent 087",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A088",
+      "name": "Agent 088",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A089",
+      "name": "Agent 089",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A090",
+      "name": "Agent 090",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A091",
+      "name": "Agent 091",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A092",
+      "name": "Agent 092",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A093",
+      "name": "Agent 093",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A094",
+      "name": "Agent 094",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A095",
+      "name": "Agent 095",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A096",
+      "name": "Agent 096",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A097",
+      "name": "Agent 097",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A098",
+      "name": "Agent 098",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A099",
+      "name": "Agent 099",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A100",
+      "name": "Agent 100",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A101",
+      "name": "Agent 101",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A102",
+      "name": "Agent 102",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A103",
+      "name": "Agent 103",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A104",
+      "name": "Agent 104",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A105",
+      "name": "Agent 105",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A106",
+      "name": "Agent 106",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A107",
+      "name": "Agent 107",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A108",
+      "name": "Agent 108",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A109",
+      "name": "Agent 109",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A110",
+      "name": "Agent 110",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A111",
+      "name": "Agent 111",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A112",
+      "name": "Agent 112",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A113",
+      "name": "Agent 113",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A114",
+      "name": "Agent 114",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A115",
+      "name": "Agent 115",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A116",
+      "name": "Agent 116",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A117",
+      "name": "Agent 117",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A118",
+      "name": "Agent 118",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A119",
+      "name": "Agent 119",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A120",
+      "name": "Agent 120",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A121",
+      "name": "Agent 121",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A122",
+      "name": "Agent 122",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A123",
+      "name": "Agent 123",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A124",
+      "name": "Agent 124",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A125",
+      "name": "Agent 125",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A126",
+      "name": "Agent 126",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A127",
+      "name": "Agent 127",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A128",
+      "name": "Agent 128",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A129",
+      "name": "Agent 129",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A130",
+      "name": "Agent 130",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A131",
+      "name": "Agent 131",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A132",
+      "name": "Agent 132",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A133",
+      "name": "Agent 133",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A134",
+      "name": "Agent 134",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A135",
+      "name": "Agent 135",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A136",
+      "name": "Agent 136",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A137",
+      "name": "Agent 137",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A138",
+      "name": "Agent 138",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A139",
+      "name": "Agent 139",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A140",
+      "name": "Agent 140",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A141",
+      "name": "Agent 141",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A142",
+      "name": "Agent 142",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A143",
+      "name": "Agent 143",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A144",
+      "name": "Agent 144",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A145",
+      "name": "Agent 145",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A146",
+      "name": "Agent 146",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A147",
+      "name": "Agent 147",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A148",
+      "name": "Agent 148",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A149",
+      "name": "Agent 149",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    },
+    {
+      "id": "A150",
+      "name": "Agent 150",
+      "team": "Core",
+      "description": "Generic agent slot",
+      "status": "idle",
+      "turbo_supported": true
+    }
+  ]
+}
