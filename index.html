@@ -1,106 +1,30 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ΞB — Bob Empire (v2.2 Global Expansion)</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script defer src="config.js"></script>
-  <script defer src="main.js"></script>
-</head>
-<body>
-  <header class="app-header">
-    <h1>ΞB — Bob Empire — v2.2</h1>
-    <div class="status">
-      <span id="envStatus">ENV: not set</span>
-      <button id="btnTurbo" title="Toggle Turbo Mode">Turbo: OFF</button>
-      <button id="btnLogin">Login</button>
-      <button id="btnLogout" style="display:none">Logout</button>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bob Empire — Global AI Commerce</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000"/>
+    <link rel="icon" href="logo_bob_empire.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="hero">
+      <img src="logo_bob_empire.png" alt="Bob Empire" class="logo"/>
+      <h1>BOB EMPIRE</h1>
+      <p class="tag">منصة تجارة عالمية يقودها الذكاء الاصطناعي — واجهة سوداء/كتابة بيضاء 👑</p>
+    </header>
 
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="chat">Chat</button>
-    <button class="tab-btn" data-tab="store">Store</button>
-    <button class="tab-btn" data-tab="admin">Admin</button>
-    <button class="tab-btn" data-tab="agents">Agents</button>
-    <button class="tab-btn" data-tab="flows">Flows</button>
-  </nav>
+    <nav class="tabs" id="tabs"></nav>
 
-  <main>
-    <section id="chat" class="tab active">
-      <div class="panel">
-        <h2>مركز الأوامر الصوتية والنصية</h2>
-        <div class="row">
-          <textarea id="txtCmd" placeholder="أوامر أمثلة: فعّل التربو / أضف وكيل / اربط شوبيفاي / ارفع على أمازون / انشر تيكتوك / وقّع ملف ..."></textarea>
-        </div>
-        <div class="row">
-          <button id="btnRun">نفّذ</button>
-          <button id="btnMic">🎤 استمع</button>
-          <button id="btnSpeak">🔊 رد صوتي</button>
-        </div>
-        <pre id="log" class="log"></pre>
-      </div>
-    </section>
+    <main id="content"></main>
 
-    <section id="store" class="tab">
-      <div class="panel">
-        <h2>المتجر</h2>
-        <div class="row">
-          <input id="prodName" placeholder="اسم المنتج"/>
-          <input id="prodPrice" placeholder="السعر"/>
-          <button id="btnAddProduct">إضافة منتج</button>
-        </div>
-        <div id="products"></div>
-      </div>
-    </section>
+    <footer>
+      <small>© Bob Empire — v2.2</small>
+    </footer>
 
-    <section id="admin" class="tab">
-      <div class="panel">
-        <h2>لوحة التحكم</h2>
-        <div class="grid3">
-          <button id="btnHealth">فحص الصحة</button>
-          <button id="btnSync">مزامنة التكاملات</button>
-          <button id="btnSignedUrl">توقيع رابط ملف</button>
-        </div>
-        <pre id="adminLog" class="log"></pre>
-      </div>
-    </section>
-
-    <section id="agents" class="tab">
-      <div class="panel">
-        <h2>إدارة الوكلاء (غير محدود)</h2>
-        <div class="row">
-          <input id="agentName" placeholder="اسم الوكيل"/>
-          <input id="agentTeam" placeholder="الفريق/التصنيف (Sales/Ops/Legal/...)"/>
-        </div>
-        <div class="row">
-          <input id="agentDesc" placeholder="وصف مختصر لوظيفة الوكيل"/>
-          <button id="btnAddAgent">+ أضف وكيل</button>
-        </div>
-        <div id="agentsTable"></div>
-      </div>
-    </section>
-
-    <section id="flows" class="tab">
-      <div class="panel">
-        <h2>إدارة Flows (n8n/Webhooks) غير محدود</h2>
-        <div class="row">
-          <input id="flowName" placeholder="اسم الفلو"/>
-          <input id="flowPurpose" placeholder="الغرض (نشر فيديو/ مزامنة منتجات/ ... )"/>
-        </div>
-        <div class="row">
-          <input id="flowWebhook" placeholder="رابط الـ Webhook (اختياري الآن)"/>
-          <button id="btnAddFlow">+ أضف فلو</button>
-        </div>
-        <div id="flowsTable"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="app-footer">
-    <small>© 2025 ΞB — Bob Empire. All rights reserved.</small>
-  </footer>
-</body>
+    <script type="module" src="BOB_EMPIRE_FINAL.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

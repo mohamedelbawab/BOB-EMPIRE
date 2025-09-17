@@ -1,18 +1,13 @@
 {
-  "name": "ΞB — Bob Empire",
-  "short_name": "Bob Empire",
-  "start_url": "index.html",
+  "name": "Bob Empire",
+  "short_name": "BobEmpire",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#c7a646",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
+      "src": "logo_bob_empire.png",
       "sizes": "512x512",
       "type": "image/png"
     }

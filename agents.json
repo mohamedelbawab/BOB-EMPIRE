@@ -1,1204 +1,702 @@
-{
-  "agents": [
-    {
-      "id": "A001",
-      "name": "Agent 001",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A002",
-      "name": "Agent 002",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A003",
-      "name": "Agent 003",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A004",
-      "name": "Agent 004",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A005",
-      "name": "Agent 005",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A006",
-      "name": "Agent 006",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A007",
-      "name": "Agent 007",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A008",
-      "name": "Agent 008",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A009",
-      "name": "Agent 009",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A010",
-      "name": "Agent 010",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A011",
-      "name": "Agent 011",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A012",
-      "name": "Agent 012",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A013",
-      "name": "Agent 013",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A014",
-      "name": "Agent 014",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A015",
-      "name": "Agent 015",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A016",
-      "name": "Agent 016",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A017",
-      "name": "Agent 017",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A018",
-      "name": "Agent 018",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A019",
-      "name": "Agent 019",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A020",
-      "name": "Agent 020",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A021",
-      "name": "Agent 021",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A022",
-      "name": "Agent 022",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A023",
-      "name": "Agent 023",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A024",
-      "name": "Agent 024",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A025",
-      "name": "Agent 025",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A026",
-      "name": "Agent 026",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A027",
-      "name": "Agent 027",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A028",
-      "name": "Agent 028",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A029",
-      "name": "Agent 029",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A030",
-      "name": "Agent 030",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A031",
-      "name": "Agent 031",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A032",
-      "name": "Agent 032",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A033",
-      "name": "Agent 033",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A034",
-      "name": "Agent 034",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A035",
-      "name": "Agent 035",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A036",
-      "name": "Agent 036",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A037",
-      "name": "Agent 037",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A038",
-      "name": "Agent 038",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A039",
-      "name": "Agent 039",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A040",
-      "name": "Agent 040",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A041",
-      "name": "Agent 041",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A042",
-      "name": "Agent 042",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A043",
-      "name": "Agent 043",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A044",
-      "name": "Agent 044",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A045",
-      "name": "Agent 045",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A046",
-      "name": "Agent 046",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A047",
-      "name": "Agent 047",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A048",
-      "name": "Agent 048",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A049",
-      "name": "Agent 049",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A050",
-      "name": "Agent 050",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A051",
-      "name": "Agent 051",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A052",
-      "name": "Agent 052",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A053",
-      "name": "Agent 053",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A054",
-      "name": "Agent 054",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A055",
-      "name": "Agent 055",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A056",
-      "name": "Agent 056",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A057",
-      "name": "Agent 057",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A058",
-      "name": "Agent 058",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A059",
-      "name": "Agent 059",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A060",
-      "name": "Agent 060",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A061",
-      "name": "Agent 061",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A062",
-      "name": "Agent 062",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A063",
-      "name": "Agent 063",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A064",
-      "name": "Agent 064",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A065",
-      "name": "Agent 065",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A066",
-      "name": "Agent 066",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A067",
-      "name": "Agent 067",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A068",
-      "name": "Agent 068",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A069",
-      "name": "Agent 069",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A070",
-      "name": "Agent 070",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A071",
-      "name": "Agent 071",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A072",
-      "name": "Agent 072",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A073",
-      "name": "Agent 073",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A074",
-      "name": "Agent 074",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A075",
-      "name": "Agent 075",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A076",
-      "name": "Agent 076",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A077",
-      "name": "Agent 077",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A078",
-      "name": "Agent 078",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A079",
-      "name": "Agent 079",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A080",
-      "name": "Agent 080",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A081",
-      "name": "Agent 081",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A082",
-      "name": "Agent 082",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A083",
-      "name": "Agent 083",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A084",
-      "name": "Agent 084",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A085",
-      "name": "Agent 085",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A086",
-      "name": "Agent 086",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A087",
-      "name": "Agent 087",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A088",
-      "name": "Agent 088",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A089",
-      "name": "Agent 089",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A090",
-      "name": "Agent 090",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A091",
-      "name": "Agent 091",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A092",
-      "name": "Agent 092",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A093",
-      "name": "Agent 093",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A094",
-      "name": "Agent 094",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A095",
-      "name": "Agent 095",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A096",
-      "name": "Agent 096",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A097",
-      "name": "Agent 097",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A098",
-      "name": "Agent 098",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A099",
-      "name": "Agent 099",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A100",
-      "name": "Agent 100",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A101",
-      "name": "Agent 101",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A102",
-      "name": "Agent 102",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A103",
-      "name": "Agent 103",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A104",
-      "name": "Agent 104",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A105",
-      "name": "Agent 105",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A106",
-      "name": "Agent 106",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A107",
-      "name": "Agent 107",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A108",
-      "name": "Agent 108",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A109",
-      "name": "Agent 109",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A110",
-      "name": "Agent 110",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A111",
-      "name": "Agent 111",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A112",
-      "name": "Agent 112",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A113",
-      "name": "Agent 113",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A114",
-      "name": "Agent 114",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A115",
-      "name": "Agent 115",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A116",
-      "name": "Agent 116",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A117",
-      "name": "Agent 117",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A118",
-      "name": "Agent 118",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A119",
-      "name": "Agent 119",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A120",
-      "name": "Agent 120",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A121",
-      "name": "Agent 121",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A122",
-      "name": "Agent 122",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A123",
-      "name": "Agent 123",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A124",
-      "name": "Agent 124",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A125",
-      "name": "Agent 125",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A126",
-      "name": "Agent 126",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A127",
-      "name": "Agent 127",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A128",
-      "name": "Agent 128",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A129",
-      "name": "Agent 129",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A130",
-      "name": "Agent 130",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A131",
-      "name": "Agent 131",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A132",
-      "name": "Agent 132",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A133",
-      "name": "Agent 133",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A134",
-      "name": "Agent 134",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A135",
-      "name": "Agent 135",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A136",
-      "name": "Agent 136",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A137",
-      "name": "Agent 137",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A138",
-      "name": "Agent 138",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A139",
-      "name": "Agent 139",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A140",
-      "name": "Agent 140",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A141",
-      "name": "Agent 141",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A142",
-      "name": "Agent 142",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A143",
-      "name": "Agent 143",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A144",
-      "name": "Agent 144",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A145",
-      "name": "Agent 145",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A146",
-      "name": "Agent 146",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A147",
-      "name": "Agent 147",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A148",
-      "name": "Agent 148",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A149",
-      "name": "Agent 149",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    },
-    {
-      "id": "A150",
-      "name": "Agent 150",
-      "team": "Core",
-      "description": "Generic agent slot",
-      "status": "idle",
-      "turbo_supported": true
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Agent_1",
+    "role": "engineering"
+  },
+  {
+    "id": 2,
+    "name": "Agent_2",
+    "role": "engineering"
+  },
+  {
+    "id": 3,
+    "name": "Agent_3",
+    "role": "catalog"
+  },
+  {
+    "id": 4,
+    "name": "Agent_4",
+    "role": "devops"
+  },
+  {
+    "id": 5,
+    "name": "Agent_5",
+    "role": "ads"
+  },
+  {
+    "id": 6,
+    "name": "Agent_6",
+    "role": "product"
+  },
+  {
+    "id": 7,
+    "name": "Agent_7",
+    "role": "product"
+  },
+  {
+    "id": 8,
+    "name": "Agent_8",
+    "role": "support"
+  },
+  {
+    "id": 9,
+    "name": "Agent_9",
+    "role": "qa"
+  },
+  {
+    "id": 10,
+    "name": "Agent_10",
+    "role": "support"
+  },
+  {
+    "id": 11,
+    "name": "Agent_11",
+    "role": "sales"
+  },
+  {
+    "id": 12,
+    "name": "Agent_12",
+    "role": "qa"
+  },
+  {
+    "id": 13,
+    "name": "Agent_13",
+    "role": "pricing"
+  },
+  {
+    "id": 14,
+    "name": "Agent_14",
+    "role": "marketing"
+  },
+  {
+    "id": 15,
+    "name": "Agent_15",
+    "role": "growth"
+  },
+  {
+    "id": 16,
+    "name": "Agent_16",
+    "role": "finance"
+  },
+  {
+    "id": 17,
+    "name": "Agent_17",
+    "role": "qa"
+  },
+  {
+    "id": 18,
+    "name": "Agent_18",
+    "role": "design"
+  },
+  {
+    "id": 19,
+    "name": "Agent_19",
+    "role": "growth"
+  },
+  {
+    "id": 20,
+    "name": "Agent_20",
+    "role": "sales"
+  },
+  {
+    "id": 21,
+    "name": "Agent_21",
+    "role": "design"
+  },
+  {
+    "id": 22,
+    "name": "Agent_22",
+    "role": "marketing"
+  },
+  {
+    "id": 23,
+    "name": "Agent_23",
+    "role": "sales"
+  },
+  {
+    "id": 24,
+    "name": "Agent_24",
+    "role": "legal"
+  },
+  {
+    "id": 25,
+    "name": "Agent_25",
+    "role": "qa"
+  },
+  {
+    "id": 26,
+    "name": "Agent_26",
+    "role": "marketing"
+  },
+  {
+    "id": 27,
+    "name": "Agent_27",
+    "role": "influencer"
+  },
+  {
+    "id": 28,
+    "name": "Agent_28",
+    "role": "qa"
+  },
+  {
+    "id": 29,
+    "name": "Agent_29",
+    "role": "qa"
+  },
+  {
+    "id": 30,
+    "name": "Agent_30",
+    "role": "catalog"
+  },
+  {
+    "id": 31,
+    "name": "Agent_31",
+    "role": "marketing"
+  },
+  {
+    "id": 32,
+    "name": "Agent_32",
+    "role": "logistics"
+  },
+  {
+    "id": 33,
+    "name": "Agent_33",
+    "role": "qa"
+  },
+  {
+    "id": 34,
+    "name": "Agent_34",
+    "role": "sales"
+  },
+  {
+    "id": 35,
+    "name": "Agent_35",
+    "role": "design"
+  },
+  {
+    "id": 36,
+    "name": "Agent_36",
+    "role": "growth"
+  },
+  {
+    "id": 37,
+    "name": "Agent_37",
+    "role": "logistics"
+  },
+  {
+    "id": 38,
+    "name": "Agent_38",
+    "role": "pricing"
+  },
+  {
+    "id": 39,
+    "name": "Agent_39",
+    "role": "engineering"
+  },
+  {
+    "id": 40,
+    "name": "Agent_40",
+    "role": "qa"
+  },
+  {
+    "id": 41,
+    "name": "Agent_41",
+    "role": "growth"
+  },
+  {
+    "id": 42,
+    "name": "Agent_42",
+    "role": "legal"
+  },
+  {
+    "id": 43,
+    "name": "Agent_43",
+    "role": "social"
+  },
+  {
+    "id": 44,
+    "name": "Agent_44",
+    "role": "devops"
+  },
+  {
+    "id": 45,
+    "name": "Agent_45",
+    "role": "social"
+  },
+  {
+    "id": 46,
+    "name": "Agent_46",
+    "role": "ugc"
+  },
+  {
+    "id": 47,
+    "name": "Agent_47",
+    "role": "catalog"
+  },
+  {
+    "id": 48,
+    "name": "Agent_48",
+    "role": "marketing"
+  },
+  {
+    "id": 49,
+    "name": "Agent_49",
+    "role": "support"
+  },
+  {
+    "id": 50,
+    "name": "Agent_50",
+    "role": "legal"
+  },
+  {
+    "id": 51,
+    "name": "Agent_51",
+    "role": "qa"
+  },
+  {
+    "id": 52,
+    "name": "Agent_52",
+    "role": "ugc"
+  },
+  {
+    "id": 53,
+    "name": "Agent_53",
+    "role": "catalog"
+  },
+  {
+    "id": 54,
+    "name": "Agent_54",
+    "role": "logistics"
+  },
+  {
+    "id": 55,
+    "name": "Agent_55",
+    "role": "catalog"
+  },
+  {
+    "id": 56,
+    "name": "Agent_56",
+    "role": "product"
+  },
+  {
+    "id": 57,
+    "name": "Agent_57",
+    "role": "engineering"
+  },
+  {
+    "id": 58,
+    "name": "Agent_58",
+    "role": "ads"
+  },
+  {
+    "id": 59,
+    "name": "Agent_59",
+    "role": "pricing"
+  },
+  {
+    "id": 60,
+    "name": "Agent_60",
+    "role": "sales"
+  },
+  {
+    "id": 61,
+    "name": "Agent_61",
+    "role": "marketing"
+  },
+  {
+    "id": 62,
+    "name": "Agent_62",
+    "role": "pricing"
+  },
+  {
+    "id": 63,
+    "name": "Agent_63",
+    "role": "growth"
+  },
+  {
+    "id": 64,
+    "name": "Agent_64",
+    "role": "growth"
+  },
+  {
+    "id": 65,
+    "name": "Agent_65",
+    "role": "ugc"
+  },
+  {
+    "id": 66,
+    "name": "Agent_66",
+    "role": "design"
+  },
+  {
+    "id": 67,
+    "name": "Agent_67",
+    "role": "social"
+  },
+  {
+    "id": 68,
+    "name": "Agent_68",
+    "role": "legal"
+  },
+  {
+    "id": 69,
+    "name": "Agent_69",
+    "role": "logistics"
+  },
+  {
+    "id": 70,
+    "name": "Agent_70",
+    "role": "pricing"
+  },
+  {
+    "id": 71,
+    "name": "Agent_71",
+    "role": "pricing"
+  },
+  {
+    "id": 72,
+    "name": "Agent_72",
+    "role": "sales"
+  },
+  {
+    "id": 73,
+    "name": "Agent_73",
+    "role": "pricing"
+  },
+  {
+    "id": 74,
+    "name": "Agent_74",
+    "role": "sales"
+  },
+  {
+    "id": 75,
+    "name": "Agent_75",
+    "role": "ugc"
+  },
+  {
+    "id": 76,
+    "name": "Agent_76",
+    "role": "design"
+  },
+  {
+    "id": 77,
+    "name": "Agent_77",
+    "role": "influencer"
+  },
+  {
+    "id": 78,
+    "name": "Agent_78",
+    "role": "engineering"
+  },
+  {
+    "id": 79,
+    "name": "Agent_79",
+    "role": "devops"
+  },
+  {
+    "id": 80,
+    "name": "Agent_80",
+    "role": "engineering"
+  },
+  {
+    "id": 81,
+    "name": "Agent_81",
+    "role": "logistics"
+  },
+  {
+    "id": 82,
+    "name": "Agent_82",
+    "role": "qa"
+  },
+  {
+    "id": 83,
+    "name": "Agent_83",
+    "role": "influencer"
+  },
+  {
+    "id": 84,
+    "name": "Agent_84",
+    "role": "ads"
+  },
+  {
+    "id": 85,
+    "name": "Agent_85",
+    "role": "growth"
+  },
+  {
+    "id": 86,
+    "name": "Agent_86",
+    "role": "growth"
+  },
+  {
+    "id": 87,
+    "name": "Agent_87",
+    "role": "catalog"
+  },
+  {
+    "id": 88,
+    "name": "Agent_88",
+    "role": "ugc"
+  },
+  {
+    "id": 89,
+    "name": "Agent_89",
+    "role": "design"
+  },
+  {
+    "id": 90,
+    "name": "Agent_90",
+    "role": "sales"
+  },
+  {
+    "id": 91,
+    "name": "Agent_91",
+    "role": "support"
+  },
+  {
+    "id": 92,
+    "name": "Agent_92",
+    "role": "finance"
+  },
+  {
+    "id": 93,
+    "name": "Agent_93",
+    "role": "product"
+  },
+  {
+    "id": 94,
+    "name": "Agent_94",
+    "role": "finance"
+  },
+  {
+    "id": 95,
+    "name": "Agent_95",
+    "role": "finance"
+  },
+  {
+    "id": 96,
+    "name": "Agent_96",
+    "role": "qa"
+  },
+  {
+    "id": 97,
+    "name": "Agent_97",
+    "role": "ugc"
+  },
+  {
+    "id": 98,
+    "name": "Agent_98",
+    "role": "support"
+  },
+  {
+    "id": 99,
+    "name": "Agent_99",
+    "role": "legal"
+  },
+  {
+    "id": 100,
+    "name": "Agent_100",
+    "role": "devops"
+  },
+  {
+    "id": 101,
+    "name": "Agent_101",
+    "role": "devops"
+  },
+  {
+    "id": 102,
+    "name": "Agent_102",
+    "role": "ads"
+  },
+  {
+    "id": 103,
+    "name": "Agent_103",
+    "role": "finance"
+  },
+  {
+    "id": 104,
+    "name": "Agent_104",
+    "role": "legal"
+  },
+  {
+    "id": 105,
+    "name": "Agent_105",
+    "role": "ugc"
+  },
+  {
+    "id": 106,
+    "name": "Agent_106",
+    "role": "ads"
+  },
+  {
+    "id": 107,
+    "name": "Agent_107",
+    "role": "design"
+  },
+  {
+    "id": 108,
+    "name": "Agent_108",
+    "role": "finance"
+  },
+  {
+    "id": 109,
+    "name": "Agent_109",
+    "role": "sales"
+  },
+  {
+    "id": 110,
+    "name": "Agent_110",
+    "role": "catalog"
+  },
+  {
+    "id": 111,
+    "name": "Agent_111",
+    "role": "influencer"
+  },
+  {
+    "id": 112,
+    "name": "Agent_112",
+    "role": "ugc"
+  },
+  {
+    "id": 113,
+    "name": "Agent_113",
+    "role": "engineering"
+  },
+  {
+    "id": 114,
+    "name": "Agent_114",
+    "role": "growth"
+  },
+  {
+    "id": 115,
+    "name": "Agent_115",
+    "role": "pricing"
+  },
+  {
+    "id": 116,
+    "name": "Agent_116",
+    "role": "pricing"
+  },
+  {
+    "id": 117,
+    "name": "Agent_117",
+    "role": "ugc"
+  },
+  {
+    "id": 118,
+    "name": "Agent_118",
+    "role": "design"
+  },
+  {
+    "id": 119,
+    "name": "Agent_119",
+    "role": "ugc"
+  },
+  {
+    "id": 120,
+    "name": "Agent_120",
+    "role": "finance"
+  },
+  {
+    "id": 121,
+    "name": "Agent_121",
+    "role": "ads"
+  },
+  {
+    "id": 122,
+    "name": "Agent_122",
+    "role": "ugc"
+  },
+  {
+    "id": 123,
+    "name": "Agent_123",
+    "role": "logistics"
+  },
+  {
+    "id": 124,
+    "name": "Agent_124",
+    "role": "product"
+  },
+  {
+    "id": 125,
+    "name": "Agent_125",
+    "role": "social"
+  },
+  {
+    "id": 126,
+    "name": "Agent_126",
+    "role": "social"
+  },
+  {
+    "id": 127,
+    "name": "Agent_127",
+    "role": "influencer"
+  },
+  {
+    "id": 128,
+    "name": "Agent_128",
+    "role": "qa"
+  },
+  {
+    "id": 129,
+    "name": "Agent_129",
+    "role": "ads"
+  },
+  {
+    "id": 130,
+    "name": "Agent_130",
+    "role": "pricing"
+  },
+  {
+    "id": 131,
+    "name": "Agent_131",
+    "role": "social"
+  },
+  {
+    "id": 132,
+    "name": "Agent_132",
+    "role": "marketing"
+  },
+  {
+    "id": 133,
+    "name": "Agent_133",
+    "role": "social"
+  },
+  {
+    "id": 134,
+    "name": "Agent_134",
+    "role": "product"
+  },
+  {
+    "id": 135,
+    "name": "Agent_135",
+    "role": "social"
+  },
+  {
+    "id": 136,
+    "name": "Agent_136",
+    "role": "design"
+  },
+  {
+    "id": 137,
+    "name": "Agent_137",
+    "role": "devops"
+  },
+  {
+    "id": 138,
+    "name": "Agent_138",
+    "role": "pricing"
+  },
+  {
+    "id": 139,
+    "name": "Agent_139",
+    "role": "support"
+  },
+  {
+    "id": 140,
+    "name": "Agent_140",
+    "role": "sales"
+  }
+]
