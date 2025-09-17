@@ -1,4 +1,4 @@
-import { CONFIG, superAI, getDashboard, AGENTS, saveRemoteConfig, loadRemoteConfig, connectAllGlobal } from './BOB_EMPIRE_FINAL.js';
+import { CONFIG, superAI, getDashboard, AGENTS, loadAgents, saveRemoteConfig, loadRemoteConfig, connectAllGlobal } from './BOB_EMPIRE_FINAL.js';
 
 const TABS = [
   {id:'dashboard', label:'Dashboard'},
@@ -37,12 +37,20 @@ async function render(id){
   if(id==='agents'){
     const list = document.createElement('div');
     list.className='grid';
-    AGENTS.forEach(a=>{
-      const c = document.createElement('div');
-      c.className='card';
-      c.innerHTML = `<b>#${a.id} ${a.name}</b><br/><span class="badge">${a.role}</span>`;
-      list.appendChild(c);
-    });
+    
+    // Ensure agents are loaded before rendering
+    await loadAgents();
+    
+    if (AGENTS.length === 0) {
+      list.innerHTML = '<div class="card">Loading agents...</div>';
+    } else {
+      AGENTS.forEach(a=>{
+        const c = document.createElement('div');
+        c.className='card';
+        c.innerHTML = `<b>#${a.id} ${a.name}</b><br/><span class="badge">${a.role}</span>`;
+        list.appendChild(c);
+      });
+    }
     contentEl.appendChild(list);
   }
   if(id==='store'){

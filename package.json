@@ -1,0 +1,26 @@
+{
+  "name": "bob-empire",
+  "version": "2.2.0",
+  "description": "Bob Empire - Global AI Commerce Platform",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build step required for static app'",
+    "start": "python3 -m http.server 8000"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "ai",
+    "commerce",
+    "ecommerce",
+    "vercel",
+    "static-site"
+  ],
+  "author": "Bob Empire",
+  "license": "MIT"
+}

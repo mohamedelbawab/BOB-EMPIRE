@@ -12,11 +12,51 @@ export const CONFIG = {
 };
 
 // ---- Supabase Auth (Frontend SDK) ----
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-export const supabase = createClient(
-  import.meta.env?.NEXT_PUBLIC_SUPABASE_URL || window.NEXT_PUBLIC_SUPABASE_URL,
-  import.meta.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY || window.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+let supabase = null;
+
+async function initializeSupabase() {
+  try {
+    const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
+    
+    // Get environment variables with proper fallbacks for Vercel
+    function getEnvVar(name, fallback) {
+      try {
+        // Try browser window globals first
+        if (typeof window !== "undefined" && window[name]) {
+          return window[name];
+        }
+        // Try config.js BE_CONFIG
+        if (typeof window !== "undefined" && window.BE_CONFIG) {
+          if (name === "NEXT_PUBLIC_SUPABASE_URL") return window.BE_CONFIG.SUPABASE_URL;
+          if (name === "NEXT_PUBLIC_SUPABASE_ANON_KEY") return window.BE_CONFIG.SUPABASE_ANON;
+        }
+        return fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    const supabaseUrl = getEnvVar('NEXT_PUBLIC_SUPABASE_URL', 'https://placeholder.supabase.co');
+    const supabaseKey = getEnvVar('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'placeholder-key');
+    
+    supabase = createClient(supabaseUrl, supabaseKey);
+  } catch (error) {
+    console.warn('Supabase initialization failed:', error);
+    // Create a mock supabase object for development
+    supabase = {
+      from: () => ({
+        select: () => ({ limit: () => ({ single: () => Promise.resolve({ data: null, error: 'No connection' }) }) }),
+        upsert: () => Promise.resolve({ error: 'No connection' })
+      })
+    };
+  }
+  return supabase;
+}
+
+// Initialize Supabase when the module loads
+initializeSupabase();
+
+export { supabase };
 
 // ---- Lightweight State (in Supabase table 'config' or localStorage fallback) ----
 const LS_KEY = "bob_empire_config";
@@ -41,8 +81,32 @@ export async function saveRemoteConfig(patch){
 }
 
 // ---- 140 AI Agents registry ----
-import agents from "./agents.json" assert { type: "json" };
-export const AGENTS = agents.map(a => ({...a, status:"idle"}));
+let AGENTS = [];
+
+// Load agents data dynamically to avoid import assertion issues
+async function loadAgents() {
+  try {
+    const response = await fetch('./agents.json');
+    const agents = await response.json();
+    AGENTS.length = 0; // Clear existing
+    AGENTS.push(...agents.map(a => ({...a, status:"idle"})));
+    return AGENTS;
+  } catch (error) {
+    console.warn('Failed to load agents.json:', error);
+    // Fallback agents if file fails to load
+    AGENTS = [
+      { id: 1, name: "Agent_1", role: "engineering", status: "idle" },
+      { id: 2, name: "Agent_2", role: "marketing", status: "idle" },
+      { id: 3, name: "Agent_3", role: "sales", status: "idle" }
+    ];
+    return AGENTS;
+  }
+}
+
+// Initialize agents on module load
+loadAgents().catch(console.error);
+
+export { AGENTS, loadAgents };
 
 export function runAgentById(id, input){
   const a = AGENTS.find(x=>x.id===id);
