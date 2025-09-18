@@ -41,8 +41,30 @@ export async function saveRemoteConfig(patch){
 }
 
 // ---- 140 AI Agents registry ----
-import agents from "./agents.json" assert { type: "json" };
-export const AGENTS = agents.map(a => ({...a, status:"idle"}));
+// Dynamic import for agents data
+let AGENTS = [];
+
+async function loadAgentsData() {
+  try {
+    const response = await fetch('./agents.json');
+    const data = await response.json();
+    AGENTS = (data.agents || data).map(a => ({...a, status:"idle"}));
+    return AGENTS;
+  } catch (error) {
+    console.warn('Could not load agents.json, using default data');
+    // Fallback agents data
+    AGENTS = Array.from({length: 140}, (_, i) => ({
+      id: i + 1,
+      name: `AI Agent ${i + 1}`,
+      role: "custom",
+      status: "idle"
+    }));
+    return AGENTS;
+  }
+}
+
+export { AGENTS };
+export { loadAgentsData };
 
 export function runAgentById(id, input){
   const a = AGENTS.find(x=>x.id===id);
