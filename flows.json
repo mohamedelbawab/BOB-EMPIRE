@@ -1,62 +1,325 @@
 [
   {
-    "id": "flow_1",
-    "name": "Automation Flow 1",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_001",
+    "name": "Amazon Product Listing Automation",
+    "description": "Automatically list products on Amazon marketplace with SEO optimization",
+    "trigger": "product_upload",
+    "platform": "Amazon",
+    "steps": [
+      {"action": "validate_product_data", "agent_id": 1},
+      {"action": "optimize_title_keywords", "agent_id": 47},
+      {"action": "generate_description", "agent_id": 46},
+      {"action": "upload_to_amazon", "agent_id": 1},
+      {"action": "monitor_listing_status", "agent_id": 1}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_2",
-    "name": "Automation Flow 2",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_002",
+    "name": "Multi-Platform Price Sync",
+    "description": "Synchronize product prices across all connected platforms",
+    "trigger": "price_change",
+    "platform": "all",
+    "steps": [
+      {"action": "detect_price_change", "agent_id": 41},
+      {"action": "calculate_platform_margins", "agent_id": 81},
+      {"action": "update_amazon_price", "agent_id": 1},
+      {"action": "update_shopify_price", "agent_id": 2},
+      {"action": "update_aliexpress_price", "agent_id": 3},
+      {"action": "log_price_changes", "agent_id": 99}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_3",
-    "name": "Automation Flow 3",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_003",
+    "name": "Customer Service Escalation",
+    "description": "Handle customer inquiries with AI and escalate when needed",
+    "trigger": "customer_inquiry",
+    "platform": "internal",
+    "steps": [
+      {"action": "analyze_inquiry_language", "agent_id": 117},
+      {"action": "provide_initial_response", "agent_id": 36},
+      {"action": "check_satisfaction_score", "agent_id": 110},
+      {"action": "escalate_if_needed", "agent_id": 88},
+      {"action": "follow_up_survey", "agent_id": 73}
+    ],
+    "language": ["ar", "ar-EG", "en"],
+    "status": "active"
   },
   {
-    "id": "flow_4",
-    "name": "Automation Flow 4",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_004",
+    "name": "Inventory Auto-Reorder",
+    "description": "Automatically reorder products when stock levels are low",
+    "trigger": "low_stock_alert",
+    "platform": "internal",
+    "steps": [
+      {"action": "analyze_sales_velocity", "agent_id": 84},
+      {"action": "predict_demand", "agent_id": 71},
+      {"action": "identify_best_supplier", "agent_id": 55},
+      {"action": "generate_purchase_order", "agent_id": 42},
+      {"action": "track_delivery_status", "agent_id": 43}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_5",
-    "name": "Automation Flow 5",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_005",
+    "name": "Social Media Campaign Launch",
+    "description": "Launch coordinated social media campaigns across platforms",
+    "trigger": "campaign_schedule",
+    "platform": "social_media",
+    "steps": [
+      {"action": "create_campaign_content", "agent_id": 49},
+      {"action": "translate_to_arabic", "agent_id": 46},
+      {"action": "schedule_facebook_post", "agent_id": 17},
+      {"action": "schedule_instagram_story", "agent_id": 18},
+      {"action": "schedule_tiktok_video", "agent_id": 22},
+      {"action": "monitor_engagement", "agent_id": 87}
+    ],
+    "language": ["ar", "en"],
+    "status": "active"
   },
   {
-    "id": "flow_6",
-    "name": "Automation Flow 6",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_006",
+    "name": "Payment Processing Optimization",
+    "description": "Optimize payment processing based on customer location and preferences",
+    "trigger": "checkout_initiated",
+    "platform": "payment",
+    "steps": [
+      {"action": "detect_customer_location", "agent_id": 80},
+      {"action": "recommend_payment_method", "agent_id": 26},
+      {"action": "process_payment", "agent_id": 27},
+      {"action": "send_confirmation", "agent_id": 19},
+      {"action": "update_order_status", "agent_id": 78}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_7",
-    "name": "Automation Flow 7",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_007",
+    "name": "Voice Order Processing",
+    "description": "Process orders received through voice commands in Arabic",
+    "trigger": "voice_command",
+    "platform": "voice",
+    "steps": [
+      {"action": "transcribe_arabic_voice", "agent_id": 38},
+      {"action": "extract_product_intent", "agent_id": 68},
+      {"action": "search_product_catalog", "agent_id": 77},
+      {"action": "confirm_order_details", "agent_id": 39},
+      {"action": "process_voice_order", "agent_id": 113}
+    ],
+    "language": ["ar", "ar-EG"],
+    "status": "active"
   },
   {
-    "id": "flow_8",
-    "name": "Automation Flow 8",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_008",
+    "name": "Return Processing Automation",
+    "description": "Handle product returns automatically with customer satisfaction focus",
+    "trigger": "return_request",
+    "platform": "internal",
+    "steps": [
+      {"action": "validate_return_eligibility", "agent_id": 44},
+      {"action": "generate_return_label", "agent_id": 43},
+      {"action": "process_refund", "agent_id": 27},
+      {"action": "update_inventory", "agent_id": 42},
+      {"action": "collect_feedback", "agent_id": 103}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_9",
-    "name": "Automation Flow 9",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_009",
+    "name": "Fraud Detection & Prevention",
+    "description": "Real-time fraud detection and prevention system",
+    "trigger": "transaction_initiated",
+    "platform": "security",
+    "steps": [
+      {"action": "analyze_transaction_pattern", "agent_id": 45},
+      {"action": "check_customer_history", "agent_id": 72},
+      {"action": "verify_payment_method", "agent_id": 26},
+      {"action": "block_suspicious_activity", "agent_id": 62},
+      {"action": "alert_security_team", "agent_id": 88}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   },
   {
-    "id": "flow_10",
-    "name": "Automation Flow 10",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_010",
+    "name": "Personalized Recommendation Engine",
+    "description": "Generate personalized product recommendations for customers",
+    "trigger": "customer_browse",
+    "platform": "internal",
+    "steps": [
+      {"action": "analyze_browsing_behavior", "agent_id": 70},
+      {"action": "identify_customer_preferences", "agent_id": 109},
+      {"action": "generate_recommendations", "agent_id": 70},
+      {"action": "personalize_content", "agent_id": 109},
+      {"action": "track_recommendation_performance", "agent_id": 104}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_011",
+    "name": "Seasonal Campaign Automation",
+    "description": "Automatically launch seasonal campaigns based on calendar events",
+    "trigger": "seasonal_event",
+    "platform": "marketing",
+    "steps": [
+      {"action": "identify_seasonal_products", "agent_id": 83},
+      {"action": "create_campaign_strategy", "agent_id": 106},
+      {"action": "adjust_inventory_levels", "agent_id": 107},
+      {"action": "launch_promotional_campaign", "agent_id": 83},
+      {"action": "monitor_campaign_performance", "agent_id": 57}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_012",
+    "name": "Cross-Platform Inventory Sync",
+    "description": "Synchronize inventory levels across all connected platforms",
+    "trigger": "inventory_change",
+    "platform": "all",
+    "steps": [
+      {"action": "detect_inventory_change", "agent_id": 42},
+      {"action": "calculate_available_stock", "agent_id": 84},
+      {"action": "update_amazon_inventory", "agent_id": 1},
+      {"action": "update_shopify_inventory", "agent_id": 2},
+      {"action": "update_local_platforms", "agent_id": 79},
+      {"action": "alert_low_stock", "agent_id": 42}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_013",
+    "name": "Customer Lifecycle Management",
+    "description": "Manage customer journey from acquisition to retention",
+    "trigger": "customer_registration",
+    "platform": "internal",
+    "steps": [
+      {"action": "welcome_new_customer", "agent_id": 48},
+      {"action": "analyze_customer_profile", "agent_id": 72},
+      {"action": "assign_customer_segment", "agent_id": 72},
+      {"action": "create_personalized_journey", "agent_id": 108},
+      {"action": "track_lifecycle_metrics", "agent_id": 85}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_014",
+    "name": "Dynamic Pricing Optimization",
+    "description": "Automatically optimize prices based on market conditions",
+    "trigger": "market_change",
+    "platform": "internal",
+    "steps": [
+      {"action": "monitor_competitor_prices", "agent_id": 89},
+      {"action": "analyze_demand_patterns", "agent_id": 81},
+      {"action": "calculate_optimal_price", "agent_id": 81},
+      {"action": "update_platform_prices", "agent_id": 79},
+      {"action": "track_price_performance", "agent_id": 99}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_015",
+    "name": "Quality Assurance Automation",
+    "description": "Automated quality checks for products and services",
+    "trigger": "product_received",
+    "platform": "internal",
+    "steps": [
+      {"action": "perform_quality_inspection", "agent_id": 54},
+      {"action": "update_product_status", "agent_id": 77},
+      {"action": "generate_quality_report", "agent_id": 54},
+      {"action": "alert_quality_issues", "agent_id": 88},
+      {"action": "track_quality_metrics", "agent_id": 56}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_016",
+    "name": "SEO Content Optimization",
+    "description": "Automatically optimize content for search engines",
+    "trigger": "content_creation",
+    "platform": "internal",
+    "steps": [
+      {"action": "analyze_keywords", "agent_id": 47},
+      {"action": "optimize_content_structure", "agent_id": 94},
+      {"action": "generate_meta_tags", "agent_id": 47},
+      {"action": "optimize_for_local_search", "agent_id": 94},
+      {"action": "track_seo_performance", "agent_id": 99}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_017",
+    "name": "WhatsApp Business Automation",
+    "description": "Automate customer interactions through WhatsApp Business",
+    "trigger": "whatsapp_message",
+    "platform": "WhatsApp",
+    "steps": [
+      {"action": "analyze_message_intent", "agent_id": 19},
+      {"action": "provide_automated_response", "agent_id": 36},
+      {"action": "share_product_catalog", "agent_id": 19},
+      {"action": "process_order_inquiry", "agent_id": 78},
+      {"action": "schedule_follow_up", "agent_id": 73}
+    ],
+    "language": ["ar", "ar-EG", "en"],
+    "status": "active"
+  },
+  {
+    "id": "flow_018",
+    "name": "Abandoned Cart Recovery",
+    "description": "Recover abandoned shopping carts through multi-channel approach",
+    "trigger": "cart_abandonment",
+    "platform": "internal",
+    "steps": [
+      {"action": "identify_abandoned_cart", "agent_id": 105},
+      {"action": "send_email_reminder", "agent_id": 48},
+      {"action": "offer_personalized_discount", "agent_id": 105},
+      {"action": "send_whatsapp_reminder", "agent_id": 19},
+      {"action": "track_recovery_success", "agent_id": 86}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_019",
+    "name": "Influencer Campaign Management",
+    "description": "Manage influencer partnerships and campaigns",
+    "trigger": "influencer_collaboration",
+    "platform": "social_media",
+    "steps": [
+      {"action": "identify_suitable_influencers", "agent_id": 50},
+      {"action": "negotiate_partnership_terms", "agent_id": 91},
+      {"action": "create_campaign_brief", "agent_id": 83},
+      {"action": "track_campaign_performance", "agent_id": 87},
+      {"action": "calculate_roi", "agent_id": 56}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
+  },
+  {
+    "id": "flow_020",
+    "name": "Compliance Monitoring",
+    "description": "Monitor and ensure compliance across all platforms and regions",
+    "trigger": "regulatory_update",
+    "platform": "internal",
+    "steps": [
+      {"action": "analyze_regulatory_changes", "agent_id": 51},
+      {"action": "assess_compliance_impact", "agent_id": 80},
+      {"action": "update_platform_settings", "agent_id": 79},
+      {"action": "generate_compliance_report", "agent_id": 51},
+      {"action": "train_relevant_agents", "agent_id": 92}
+    ],
+    "language": ["en", "ar"],
+    "status": "active"
   }
 ]
