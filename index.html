@@ -1,22 +1,129 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bob Empire</title>
+  <title>Bob Empire - منصة الذكاء الاصطناعي التجارية</title>
   <link rel="manifest" href="manifest.json">
-  <style>
-    body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { font-size: 3em; }
-    .crown { font-size: 2em; color: gold; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>👑 Bob Empire</h1>
-  <p>منصة تجارة عالمية يقودها الذكاء الاصطناعي</p>
-  <button onclick="login()">Login</button>
-  <button onclick="signup()">Sign Up</button>
-  <script src="main.js"></script>
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="logo_bob_empire.png" alt="Bob Empire" class="logo" />
+    <h1>👑 BOB EMPIRE</h1>
+    <p class="tag">منصة تجارة عالمية يقودها الذكاء الاصطناعي</p>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <nav class="tabs">
+    <button onclick="showTab('chat')" class="tab-btn active">💬 محادثة</button>
+    <button onclick="showTab('agents')" class="tab-btn">🤖 الوكلاء</button>
+    <button onclick="showTab('platforms')" class="tab-btn">🌐 المنصات</button>
+    <button onclick="showTab('n8n')" class="tab-btn">⚡ الأتمتة</button>
+    <button onclick="showTab('settings')" class="tab-btn">⚙️ الإعدادات</button>
+  </nav>
+
+  <main>
+    <!-- Chat Tab -->
+    <div id="chat" class="tab active">
+      <div class="card">
+        <h2>💬 محادثة مع الذكاء الاصطناعي</h2>
+        <div id="chatMessages" class="chat-messages">
+          <div class="message ai-message">
+            <strong>🤖 بوب AI:</strong> أهلاً وسهلاً! أنا هنا عشان أساعدك في أي حاجة تحتاجها. إيه اللي ممكن أعمله لك النهاردة؟ 📞
+          </div>
+        </div>
+        <div class="chat-input-container">
+          <div class="chat-box">
+            <textarea id="userInput" placeholder="اكتب رسالتك هنا أو اضغط على الميكروفون للتحدث..." rows="2"></textarea>
+            <div class="chat-controls">
+              <button id="voiceBtn" class="voice-btn" onclick="toggleVoice()">🎤</button>
+              <button onclick="sendMessage()">إرسال</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agents Tab -->
+    <div id="agents" class="tab">
+      <div class="card">
+        <h2>🤖 إدارة الوكلاء (140 وكيل نشط)</h2>
+        <div class="agents-stats">
+          <span class="badge">✅ نشط: <span id="activeAgents">140</span></span>
+          <span class="badge">⏸️ متوقف: <span id="pausedAgents">0</span></span>
+          <button onclick="addNewAgent()" class="add-btn">+ إضافة وكيل</button>
+        </div>
+        <div id="agentsList" class="grid"></div>
+      </div>
+    </div>
+
+    <!-- Platforms Tab -->
+    <div id="platforms" class="tab">
+      <div class="card">
+        <h2>🌐 المنصات العالمية</h2>
+        <button onclick="connectAllPlatforms()" class="connect-all-btn">🔗 ربط جميع المنصات</button>
+        <div id="platformsList" class="grid"></div>
+      </div>
+    </div>
+
+    <!-- n8n Automation Tab -->
+    <div id="n8n" class="tab">
+      <div class="card">
+        <h2>⚡ إدارة الأتمتة والتكاملات (n8n)</h2>
+        <div class="n8n-controls">
+          <input type="url" id="n8nUrl" placeholder="https://your-n8n-instance.com" />
+          <button onclick="connectN8N()">ربط n8n</button>
+          <button onclick="syncIntegrations()">مزامنة التكاملات</button>
+        </div>
+        <div id="n8nStatus" class="status-indicator">⚪ غير متصل</div>
+        <div id="flowsList" class="grid"></div>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="settings" class="tab">
+      <div class="card">
+        <h2>⚙️ إعدادات التطبيق</h2>
+        <div class="settings-section">
+          <h3>🔐 إعدادات الأمان</h3>
+          <label>كلمة مرور الإدارة:</label>
+          <input type="password" id="adminPassword" value="Bob@Bob0000" />
+          
+          <h3>🚀 إعدادات الأداء</h3>
+          <label>
+            <input type="checkbox" id="turboMode" /> وضع التيربو
+          </label>
+          
+          <h3>🗣️ إعدادات الصوت</h3>
+          <label>اللغة:</label>
+          <select id="voiceLanguage">
+            <option value="ar-EG">العربية المصرية</option>
+            <option value="ar-SA">العربية السعودية</option>
+            <option value="en-US">English</option>
+          </select>
+          
+          <h3>🔌 إعدادات Supabase</h3>
+          <label>Supabase URL:</label>
+          <input type="url" id="supabaseUrl" placeholder="https://your-project.supabase.co" />
+          <label>Supabase Anon Key:</label>
+          <input type="text" id="supabaseKey" placeholder="Your anon key" />
+          
+          <button onclick="saveSettings()" class="save-btn">💾 حفظ الإعدادات</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Bob Empire - Powered by SuperAI | النسخة v2.2</p>
+  </footer>
+
+  <!-- Audio elements for TTS -->
+  <audio id="ttsAudio" style="display: none;"></audio>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -1,62 +1,146 @@
 [
   {
     "id": "flow_1",
-    "name": "Automation Flow 1",
-    "trigger": "manual",
-    "steps": []
+    "name": "أتمتة معالجة الطلبات",
+    "trigger": "order_received",
+    "steps": [
+      {"action": "validate_order", "agent": "وكيل التجارة الإلكترونية"},
+      {"action": "check_inventory", "agent": "وكيل إدارة المخزون"},
+      {"action": "process_payment", "agent": "وكيل المحاسبة"},
+      {"action": "prepare_shipping", "agent": "وكيل الشحن والتوصيل"}
+    ],
+    "status": "active"
   },
   {
-    "id": "flow_2",
-    "name": "Automation Flow 2",
-    "trigger": "manual",
-    "steps": []
+    "id": "flow_2", 
+    "name": "مزامنة المخزون بين المنصات",
+    "trigger": "inventory_change",
+    "steps": [
+      {"action": "detect_change", "agent": "وكيل إدارة المخزون"},
+      {"action": "update_amazon", "agent": "وكيل أمازون"},
+      {"action": "update_shopify", "agent": "وكيل شوبيفاي"},
+      {"action": "update_alibaba", "agent": "وكيل علي بابا"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_3",
-    "name": "Automation Flow 3",
-    "trigger": "manual",
-    "steps": []
+    "name": "إشعارات العملاء الآلية",
+    "trigger": "customer_action",
+    "steps": [
+      {"action": "send_welcome", "agent": "وكيل خدمة العملاء"},
+      {"action": "send_order_confirmation", "agent": "وكيل واتساب"},
+      {"action": "send_shipping_updates", "agent": "وكيل تيليجرام"},
+      {"action": "request_feedback", "agent": "وكيل فيسبوك"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_4",
-    "name": "Automation Flow 4",
-    "trigger": "manual",
-    "steps": []
+    "name": "تحليل المبيعات اليومي",
+    "trigger": "daily_schedule",
+    "steps": [
+      {"action": "collect_sales_data", "agent": "وكيل تحليل البيانات"},
+      {"action": "generate_report", "agent": "وكيل التحليل المتقدم"},
+      {"action": "send_to_management", "agent": "وكيل الاتصالات"},
+      {"action": "update_dashboard", "agent": "وكيل الذكاء التجاري"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_5",
-    "name": "Automation Flow 5",
+    "name": "ربط المنصات الجديدة",
     "trigger": "manual",
-    "steps": []
+    "steps": [
+      {"action": "verify_credentials", "agent": "وكيل الأمن السيبراني"},
+      {"action": "test_connection", "agent": "وكيل التكامل"},
+      {"action": "sync_products", "agent": "وكيل تطوير المنتجات"},
+      {"action": "validate_setup", "agent": "وكيل ضمان الجودة"}
+    ],
+    "status": "paused"
   },
   {
     "id": "flow_6",
-    "name": "Automation Flow 6",
-    "trigger": "manual",
-    "steps": []
+    "name": "حملة تسويقية ذكية",
+    "trigger": "marketing_event",
+    "steps": [
+      {"action": "analyze_trends", "agent": "وكيل اتجاهات السوق"},
+      {"action": "create_content", "agent": "وكيل كتابة المحتوى"},
+      {"action": "design_visuals", "agent": "وكيل التصميم الجرافيكي"},
+      {"action": "launch_campaign", "agent": "وكيل التسويق الرقمي"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_7",
-    "name": "Automation Flow 7",
-    "trigger": "manual",
-    "steps": []
+    "name": "مراقبة الأمان والتهديدات",
+    "trigger": "security_alert",
+    "steps": [
+      {"action": "detect_threat", "agent": "وكيل الأمن السيبراني المتقدم"},
+      {"action": "assess_risk", "agent": "وكيل المخاطر"},
+      {"action": "implement_protection", "agent": "وكيل الأمن السيبراني"},
+      {"action": "notify_admin", "agent": "وكيل الطوارئ والنسخ الاحتياطي"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_8",
-    "name": "Automation Flow 8",
-    "trigger": "manual",
-    "steps": []
+    "name": "تحسين الأسعار التنافسية",
+    "trigger": "price_change",
+    "steps": [
+      {"action": "monitor_competitors", "agent": "وكيل التحليل التنافسي"},
+      {"action": "analyze_pricing", "agent": "وكيل التسعير"},
+      {"action": "recommend_changes", "agent": "وكيل الذكاء الاصطناعي التطبيقي"},
+      {"action": "update_prices", "agent": "وكيل التجارة الإلكترونية"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_9",
-    "name": "Automation Flow 9",
-    "trigger": "manual",
-    "steps": []
+    "name": "دعم العملاء متعدد اللغات",
+    "trigger": "customer_inquiry",
+    "steps": [
+      {"action": "detect_language", "agent": "وكيل معالجة اللغات الطبيعية"},
+      {"action": "translate_query", "agent": "وكيل الترجمة"},
+      {"action": "provide_support", "agent": "وكيل خدمة العملاء"},
+      {"action": "follow_up", "agent": "وكيل إدارة العلاقات"}
+    ],
+    "status": "active"
   },
   {
     "id": "flow_10",
-    "name": "Automation Flow 10",
-    "trigger": "manual",
-    "steps": []
+    "name": "إدارة المردودات والاستبدال",
+    "trigger": "return_request",
+    "steps": [
+      {"action": "process_request", "agent": "وكيل خدمة العملاء"},
+      {"action": "validate_return", "agent": "وكيل الجودة"},
+      {"action": "process_refund", "agent": "وكيل المحاسبة"},
+      {"action": "update_inventory", "agent": "وكيل إدارة المخزون"}
+    ],
+    "status": "active"
+  },
+  {
+    "id": "flow_11",
+    "name": "تطوير منتجات جديدة بالذكاء الاصطناعي",
+    "trigger": "product_development",
+    "steps": [
+      {"action": "market_research", "agent": "وكيل البحث والتطوير"},
+      {"action": "trend_analysis", "agent": "وكيل اتجاهات السوق"},
+      {"action": "prototype_design", "agent": "وكيل تطوير المنتجات"},
+      {"action": "ai_optimization", "agent": "وكيل الذكاء الاصطناعي 1"}
+    ],
+    "status": "active"
+  },
+  {
+    "id": "flow_12",
+    "name": "تحليل سلوك العملاء",
+    "trigger": "customer_data",
+    "steps": [
+      {"action": "collect_behavior_data", "agent": "وكيل التحليل التنبؤي"},
+      {"action": "segment_customers", "agent": "وكيل التعلم الآلي"},
+      {"action": "personalize_experience", "agent": "وكيل تجربة المستخدم"},
+      {"action": "recommend_products", "agent": "وكيل الذكاء الاصطناعي 2"}
+    ],
+    "status": "active"
   }
 ]
