@@ -1,13 +1,58 @@
 
 {
-  "name": "Bob Empire",
-  "short_name": "BobEmpire",
-  "start_url": ".",
+  "name": "Bob Empire - Mobile Ready AI Commerce",
+  "short_name": "Bob Empire",
+  "description": "Global AI-Powered Commerce Platform with cross-device sync and mobile optimization",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "description": "AI powered global commerce platform",
+  "background_color": "#1e1e2e",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "categories": ["business", "productivity", "shopping"],
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "features": [
+    "Cross-device synchronization",
+    "Mobile-first responsive design",
+    "In-app settings management",
+    "Device linking with QR codes",
+    "AI-powered commerce automation",
+    "140+ AI agents",
+    "30+ platform integrations"
+  ],
+  "shortcuts": [
+    {
+      "name": "Settings",
+      "short_name": "Settings",
+      "description": "Manage APIs, agents, and platforms",
+      "url": "/?action=settings",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Link Device",
+      "short_name": "Link Device",
+      "description": "Connect mobile and desktop devices",
+      "url": "/?action=device-link",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "AI Chat",
+      "short_name": "AI Chat",
+      "description": "Chat with Bob Empire AI",
+      "url": "/?action=chat",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
   ]
 }
