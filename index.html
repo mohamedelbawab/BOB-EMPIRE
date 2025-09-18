@@ -101,7 +101,11 @@
     // Check server status on page load
     async function checkStatus() {
       try {
-        const response = await fetch('http://localhost:3000/api/super-ai', {
+        // Get base URL dynamically
+        const isProduction = window.location.protocol === 'https:' || window.location.hostname !== 'localhost';
+        const baseURL = isProduction ? window.location.origin : "http://localhost:3000";
+        
+        const response = await fetch(`${baseURL}/api/super-ai`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ command: '/status' })

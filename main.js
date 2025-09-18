@@ -1,8 +1,9 @@
 
-import { SUPABASE_URL, SUPABASE_ANON_KEY, AI_API_URL } from './config.js';
+import { SUPABASE_URL, SUPABASE_ANON_KEY, AI_API_URL, SUPER_AI_API_URL, AUTH_API_URL, APP_CONFIG } from './config.js';
 
 console.log("Bob Empire initialized");
-console.log("Supabase URL:", SUPABASE_URL);
+console.log("Base URL:", APP_CONFIG.baseURL);
+console.log("Version:", APP_CONFIG.version);
 
 // Authentication state
 let currentUser = null;
@@ -18,7 +19,7 @@ async function login() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/auth/login', {
+    const response = await fetch(AUTH_API_URL + '/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ async function signup() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/auth/signup', {
+    const response = await fetch(AUTH_API_URL + '/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -90,7 +91,7 @@ async function runSuperAI(command) {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/super-ai', {
+    const response = await fetch(SUPER_AI_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -124,7 +125,7 @@ async function chatWithAI() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/ai', {
+    const response = await fetch(AI_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
