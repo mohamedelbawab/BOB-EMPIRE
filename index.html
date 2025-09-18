@@ -1,22 +1,194 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bob Empire</title>
+  <title>Bob Empire - منصة التجارة الذكية</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  
+  <!-- Preload important resources -->
+  <link rel="preload" href="main.js" as="script">
+  
+  <!-- Meta tags for SEO and social sharing -->
+  <meta name="description" content="Bob Empire - منصة تجارة عالمية يقودها الذكاء الاصطناعي مع دعم لأكثر من 140 وكيل ذكي ومئات التدفقات التلقائية">
+  <meta name="keywords" content="تجارة إلكترونية, ذكاء اصطناعي, وكلاء أذكياء, تدفقات تلقائية, منصات عالمية">
+  <meta name="author" content="Bob Empire">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Bob Empire - منصة التجارة الذكية">
+  <meta property="og:description" content="منصة تجارة عالمية يقودها الذكاء الاصطناعي">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo_bob_empire.png">
+  
+  <!-- PWA theme color -->
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
   <style>
-    body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { font-size: 3em; }
-    .crown { font-size: 2em; color: gold; }
+    /* Loading screen styles */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loading-logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    .loading-text {
+      color: #ffd700;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #333;
+      border-top: 4px solid #ffd700;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
-  <h1>👑 Bob Empire</h1>
-  <p>منصة تجارة عالمية يقودها الذكاء الاصطناعي</p>
-  <button onclick="login()">Login</button>
-  <button onclick="signup()">Sign Up</button>
-  <script src="main.js"></script>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <img src="logo_bob_empire.png" alt="Bob Empire" class="loading-logo" onerror="this.style.display='none'">
+    <div class="loading-text">تحميل Bob Empire...</div>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Main Application Container -->
+  <div id="app" style="display: none;">
+    <!-- Content will be dynamically loaded by main.js -->
+  </div>
+
+  <!-- Error Fallback -->
+  <noscript>
+    <div style="text-align: center; padding: 50px; color: #fff; background: #000;">
+      <h1>⚠️ تحتاج إلى تفعيل JavaScript</h1>
+      <p>يرجى تفعيل JavaScript في متصفحك لاستخدام Bob Empire</p>
+    </div>
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="main.js" defer></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    // Hide loading screen after page loads
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const app = document.getElementById('app');
+        if (loadingScreen) {
+          loadingScreen.classList.add('hidden');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            app.style.display = 'block';
+          }, 500);
+        }
+      }, 1500); // Show loading for at least 1.5 seconds
+    });
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(registration) {
+            console.log('✅ Service Worker registered successfully:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('❌ Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    // Handle PWA install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Show install button if needed
+      const installBtn = document.getElementById('installBtn');
+      if (installBtn) {
+        installBtn.style.display = 'block';
+        installBtn.addEventListener('click', (e) => {
+          installBtn.style.display = 'none';
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('✅ User accepted the PWA install prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      }
+    });
+
+    // Handle app installed event
+    window.addEventListener('appinstalled', (evt) => {
+      console.log('✅ Bob Empire PWA was installed');
+    });
+
+    // Global error handler
+    window.addEventListener('error', function(e) {
+      console.error('❌ Global error:', e.error);
+      
+      // Show user-friendly error message
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'message error';
+      errorDiv.textContent = 'حدث خطأ غير متوقع. يرجى إعادة تحميل الصفحة.';
+      document.body.appendChild(errorDiv);
+      
+      setTimeout(() => {
+        errorDiv.remove();
+      }, 5000);
+    });
+
+    // Performance monitoring
+    window.addEventListener('load', function() {
+      const perfData = performance.getEntriesByType('navigation')[0];
+      console.log('📊 Page load performance:', {
+        loadTime: perfData.loadEventEnd - perfData.loadEventStart,
+        domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
+        totalTime: perfData.loadEventEnd - perfData.fetchStart
+      });
+    });
+  </script>
 </body>
 </html>
