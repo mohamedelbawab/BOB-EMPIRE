@@ -1,22 +1,118 @@
 [
   {
     "id": "flow_1",
-    "name": "Automation Flow 1",
-    "trigger": "manual",
-    "steps": []
+    "name": "تدفق إدارة الطلبات الآلي",
+    "description": "يدير الطلبات من الاستلام حتى التسليم",
+    "trigger": "webhook",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "استلام الطلب", "type": "webhook", "config": {"url": "/api/orders"}},
+      {"id": 2, "name": "التحقق من المخزون", "type": "agent", "agent_id": 5},
+      {"id": 3, "name": "معالجة الدفع", "type": "platform", "platform": "stripe"},
+      {"id": 4, "name": "إرسال تأكيد للعميل", "type": "notification", "method": "email"},
+      {"id": 5, "name": "تحديث المخزون", "type": "database", "action": "update"}
+    ]
   },
   {
     "id": "flow_2",
-    "name": "Automation Flow 2",
-    "trigger": "manual",
-    "steps": []
+    "name": "تدفق التسويق التلقائي",
+    "description": "حملة تسويقية متكاملة عبر جميع المنصات",
+    "trigger": "schedule",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "تحليل بيانات العملاء", "type": "agent", "agent_id": 3},
+      {"id": 2, "name": "إنشاء محتوى مخصص", "type": "agent", "agent_id": 18},
+      {"id": 3, "name": "نشر على فيسبوك", "type": "platform", "platform": "facebook"},
+      {"id": 4, "name": "نشر على إنستقرام", "type": "platform", "platform": "instagram"},
+      {"id": 5, "name": "إرسال رسائل واتساب", "type": "platform", "platform": "whatsapp"},
+      {"id": 6, "name": "قياس النتائج", "type": "analytics", "metrics": ["reach", "engagement", "conversions"]}
+    ]
   },
   {
     "id": "flow_3",
-    "name": "Automation Flow 3",
+    "name": "تدفق خدمة العملاء الذكي",
+    "description": "يتعامل مع استفسارات العملاء تلقائياً",
     "trigger": "manual",
-    "steps": []
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "تصنيف الاستفسار", "type": "ai", "model": "classification"},
+      {"id": 2, "name": "البحث في قاعدة المعرفة", "type": "database", "action": "search"},
+      {"id": 3, "name": "توليد رد ذكي", "type": "agent", "agent_id": 2},
+      {"id": 4, "name": "إرسال الرد", "type": "notification", "method": "auto"},
+      {"id": 5, "name": "متابعة رضا العميل", "type": "survey", "delay": "24h"}
+    ]
   },
+  {
+    "id": "flow_4",
+    "name": "تدفق تحليل المنافسين",
+    "description": "يراقب أسعار المنافسين ويحدث الأسعار تلقائياً",
+    "trigger": "schedule",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "جمع أسعار المنافسين", "type": "agent", "agent_id": 19},
+      {"id": 2, "name": "تحليل الاتجاهات", "type": "analytics", "period": "30d"},
+      {"id": 3, "name": "اقتراح تعديل الأسعار", "type": "ai", "model": "pricing"},
+      {"id": 4, "name": "إشعار فريق الإدارة", "type": "notification", "method": "email"},
+      {"id": 5, "name": "تطبيق التغييرات المعتمدة", "type": "database", "action": "update"}
+    ]
+  },
+  {
+    "id": "flow_5",
+    "name": "تدفق إدارة المخزون الذكي",
+    "description": "يراقب المخزون ويطلب التجديد تلقائياً",
+    "trigger": "threshold",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "مراقبة مستوى المخزون", "type": "monitor", "threshold": "low_stock"},
+      {"id": 2, "name": "التنبؤ بالطلب", "type": "agent", "agent_id": 12},
+      {"id": 3, "name": "حساب كمية الطلب", "type": "calculation", "formula": "economic_order_quantity"},
+      {"id": 4, "name": "إرسال طلب للمورد", "type": "platform", "platform": "supplier_portal"},
+      {"id": 5, "name": "تحديث توقعات التسليم", "type": "database", "action": "update"}
+    ]
+  },
+  {
+    "id": "flow_6",
+    "name": "تدفق تحسين محركات البحث",
+    "description": "يحسن المحتوى والكلمات المفتاحية تلقائياً",
+    "trigger": "weekly",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "تحليل الكلمات المفتاحية", "type": "seo_analysis", "tools": ["google_trends"]},
+      {"id": 2, "name": "تحديث وصف المنتجات", "type": "agent", "agent_id": 17},
+      {"id": 3, "name": "تحسين العناوين", "type": "ai", "model": "seo_optimization"},
+      {"id": 4, "name": "رفع الصور المحسنة", "type": "media", "action": "optimize"},
+      {"id": 5, "name": "إرسال تقرير الأداء", "type": "report", "frequency": "weekly"}
+    ]
+  },
+  {
+    "id": "flow_7",
+    "name": "تدفق إدارة المرتجعات",
+    "description": "يتعامل مع طلبات الإرجاع والاستبدال",
+    "trigger": "webhook",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "استلام طلب الإرجاع", "type": "webhook", "url": "/api/returns"},
+      {"id": 2, "name": "التحقق من شروط الإرجاع", "type": "validation", "rules": "return_policy"},
+      {"id": 3, "name": "إنشاء تسمية الشحن", "type": "agent", "agent_id": 15},
+      {"id": 4, "name": "استرداد المبلغ", "type": "platform", "platform": "payment_gateway"},
+      {"id": 5, "name": "تحديث المخزون", "type": "agent", "agent_id": 5}
+    ]
+  },
+  {
+    "id": "flow_8",
+    "name": "تدفق تقييم جودة الخدمة",
+    "description": "يجمع تقييمات العملاء ويحسن الخدمات",
+    "trigger": "after_delivery",
+    "status": "active",
+    "steps": [
+      {"id": 1, "name": "إرسال استبيان الرضا", "type": "survey", "delay": "3d"},
+      {"id": 2, "name": "تحليل التقييمات", "type": "agent", "agent_id": 14},
+      {"id": 3, "name": "تحديد نقاط التحسين", "type": "ai", "model": "sentiment_analysis"},
+      {"id": 4, "name": "إنشاء خطة عمل", "type": "planning", "template": "improvement_plan"},
+      {"id": 5, "name": "متابعة التنفيذ", "type": "tracking", "milestones": true}
+    ]
+  }
+]
   {
     "id": "flow_4",
     "name": "Automation Flow 4",

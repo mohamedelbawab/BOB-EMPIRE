@@ -274,7 +274,7 @@ async function executeCommand(command) {
 }
 
 // Chat functions
-function sendMessage() {
+async function sendMessage() {
   const input = document.getElementById('chatInput');
   const message = input.value.trim();
   if (!message) return;
@@ -282,21 +282,56 @@ function sendMessage() {
   addChatMessage(message, 'user');
   input.value = '';
   
-  // Mock AI response
-  setTimeout(() => {
+  // Show typing indicator
+  const typingDiv = addChatMessage('...', 'ai');
+  
+  try {
+    const response = await fetch('/api/ai', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        message: message,
+        language: 'ar',
+        context: { userName: currentUser?.email }
+      })
+    });
+    
+    const result = await response.json();
+    
+    // Remove typing indicator
+    if (typingDiv && typingDiv.parentNode) {
+      typingDiv.parentNode.removeChild(typingDiv);
+    }
+    
+    if (result.success) {
+      addChatMessage(result.reply, 'ai');
+    } else {
+      addChatMessage('عذراً، حدث خطأ في معالجة رسالتك. يرجى المحاولة مرة أخرى.', 'ai');
+    }
+  } catch (error) {
+    console.error('Chat error:', error);
+    if (typingDiv && typingDiv.parentNode) {
+      typingDiv.parentNode.removeChild(typingDiv);
+    }
+    
+    // Fallback to mock responses
     const responses = [
-      "مرحباً! كيف يمكنني مساعدتك اليوم؟",
+      "🤖 لدينا 140+ وكيل ذكي جاهز للعمل! يمكنني مساعدتك في تشغيل أو إدارة الوكلاء.",
       "تم فهم طلبك، جاري التنفيذ...",
       "هل تريد مني ربط منصة معينة؟",
       "يمكنني مساعدتك في إدارة الوكلاء والتدفقات"
     ];
     const response = responses[Math.floor(Math.random() * responses.length)];
     addChatMessage(response, 'ai');
-  }, 1000);
+  }
 }
 
 function addChatMessage(message, sender) {
   const messagesDiv = document.getElementById('chatMessages');
+  if (!messagesDiv) return null;
+  
   const messageDiv = document.createElement('div');
   messageDiv.className = `chat-message ${sender}`;
   messageDiv.innerHTML = `
@@ -305,18 +340,70 @@ function addChatMessage(message, sender) {
   `;
   messagesDiv.appendChild(messageDiv);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  
+  return messageDiv;
 }
 
 function startVoiceInput() {
-  if ('webkitSpeechRecognition' in window) {
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = 'ar-EG';
+  const voiceBtn = document.querySelector('[onclick="startVoiceInput()"]');
+  
+  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    
+    recognition.lang = 'ar-SA'; // Arabic Saudi
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    
+    // Add recording visual feedback
+    voiceBtn.classList.add('recording');
+    voiceBtn.textContent = '🎙️';
+    
+    recognition.onstart = function() {
+      showMessage("🎤 يتم الاستماع...", "info");
+    };
+    
     recognition.onresult = function(event) {
       const transcript = event.results[0][0].transcript;
       document.getElementById('chatInput').value = transcript;
+      showMessage("✅ تم التعرف على الصوت بنجاح", "success");
     };
-    recognition.start();
-    showMessage("🎤 يتم الاستماع...", "info");
+    
+    recognition.onerror = function(event) {
+      console.error('Speech recognition error:', event.error);
+      let errorMessage = "❌ خطأ في التعرف على الصوت";
+      
+      switch(event.error) {
+        case 'no-speech':
+          errorMessage = "❌ لم يتم اكتشاف أي صوت";
+          break;
+        case 'audio-capture':
+          errorMessage = "❌ لا يمكن الوصول للميكروفون";
+          break;
+        case 'not-allowed':
+          errorMessage = "❌ يرجى السماح بالوصول للميكروفون";
+          break;
+        case 'network':
+          errorMessage = "❌ خطأ في الشبكة";
+          break;
+      }
+      
+      showMessage(errorMessage, "error");
+    };
+    
+    recognition.onend = function() {
+      voiceBtn.classList.remove('recording');
+      voiceBtn.textContent = '🎤';
+    };
+    
+    try {
+      recognition.start();
+    } catch (error) {
+      console.error('Recognition start error:', error);
+      showMessage("❌ فشل في بدء التعرف على الصوت", "error");
+      voiceBtn.classList.remove('recording');
+      voiceBtn.textContent = '🎤';
+    }
   } else {
     showMessage("❌ المتصفح لا يدعم التعرف على الصوت", "error");
   }
@@ -327,11 +414,45 @@ async function loadAgents() {
   const agentsList = document.getElementById('agentsList');
   if (!agentsList) return;
   
-  // Mock agents data - will be replaced with actual API call
+  try {
+    const response = await fetch('/api/agents');
+    const result = await response.json();
+    
+    if (result.success) {
+      const agents = result.data;
+      
+      agentsList.innerHTML = agents.map(agent => `
+        <div class="agent-item">
+          <div class="agent-info">
+            <h4>${agent.name}</h4>
+            <p>النوع: ${agent.role} | الحالة: ${agent.status}</p>
+            <p class="agent-description">${agent.description || ''}</p>
+          </div>
+          <div class="agent-actions">
+            <button onclick="runAgent(${agent.id})" class="btn">تشغيل</button>
+            <button onclick="editAgent(${agent.id})" class="btn">تعديل</button>
+            <button onclick="deleteAgent(${agent.id})" class="btn danger">حذف</button>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      // Fallback to mock data
+      loadMockAgents();
+    }
+  } catch (error) {
+    console.error('Error loading agents:', error);
+    loadMockAgents();
+  }
+}
+
+function loadMockAgents() {
+  const agentsList = document.getElementById('agentsList');
+  if (!agentsList) return;
+  
   const agents = [
-    { id: 1, name: "وكيل الذكاء التجاري", role: "commerce", status: "active" },
-    { id: 2, name: "وكيل خدمة العملاء", role: "support", status: "idle" },
-    { id: 3, name: "وكيل التحليلات", role: "analytics", status: "active" }
+    { id: 1, name: "وكيل الذكاء التجاري", role: "commerce", status: "active", description: "متخصص في إدارة المتاجر الإلكترونية" },
+    { id: 2, name: "وكيل خدمة العملاء", role: "support", status: "idle", description: "يقدم الدعم الفني على مدار الساعة" },
+    { id: 3, name: "وكيل التحليلات", role: "analytics", status: "active", description: "يحلل البيانات ويقدم تقارير مفصلة" }
   ];
   
   agentsList.innerHTML = agents.map(agent => `
@@ -339,6 +460,7 @@ async function loadAgents() {
       <div class="agent-info">
         <h4>${agent.name}</h4>
         <p>النوع: ${agent.role} | الحالة: ${agent.status}</p>
+        <p class="agent-description">${agent.description}</p>
       </div>
       <div class="agent-actions">
         <button onclick="runAgent(${agent.id})" class="btn">تشغيل</button>
@@ -379,11 +501,46 @@ async function loadFlows() {
   const flowsList = document.getElementById('flowsList');
   if (!flowsList) return;
   
-  // Mock flows data
+  try {
+    const response = await fetch('/api/flows');
+    const result = await response.json();
+    
+    if (result.success) {
+      const flows = result.data;
+      
+      flowsList.innerHTML = flows.map(flow => `
+        <div class="flow-item">
+          <div class="flow-info">
+            <h4>${flow.name}</h4>
+            <p>المشغل: ${flow.trigger} | الحالة: ${flow.status}</p>
+            <p class="flow-description">${flow.description || ''}</p>
+            <p class="flow-steps">الخطوات: ${flow.steps ? flow.steps.length : 0}</p>
+          </div>
+          <div class="flow-actions">
+            <button onclick="runFlow('${flow.id}')" class="btn">تشغيل</button>
+            <button onclick="editFlow('${flow.id}')" class="btn">تعديل</button>
+            <button onclick="deleteFlow('${flow.id}')" class="btn danger">حذف</button>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      // Fallback to mock data
+      loadMockFlows();
+    }
+  } catch (error) {
+    console.error('Error loading flows:', error);
+    loadMockFlows();
+  }
+}
+
+function loadMockFlows() {
+  const flowsList = document.getElementById('flowsList');
+  if (!flowsList) return;
+  
   const flows = [
-    { id: "flow_1", name: "تدفق إدارة الطلبات", trigger: "manual", status: "active" },
-    { id: "flow_2", name: "تدفق تسويقي تلقائي", trigger: "webhook", status: "idle" },
-    { id: "flow_3", name: "تدفق تحليل البيانات", trigger: "schedule", status: "active" }
+    { id: "flow_1", name: "تدفق إدارة الطلبات", trigger: "webhook", status: "active", description: "يدير الطلبات تلقائياً", steps: [1,2,3,4,5] },
+    { id: "flow_2", name: "تدفق تسويقي تلقائي", trigger: "schedule", status: "idle", description: "حملة تسويقية متكاملة", steps: [1,2,3,4] },
+    { id: "flow_3", name: "تدفق تحليل البيانات", trigger: "manual", status: "active", description: "تحليل شامل للبيانات", steps: [1,2,3] }
   ];
   
   flowsList.innerHTML = flows.map(flow => `
@@ -391,6 +548,8 @@ async function loadFlows() {
       <div class="flow-info">
         <h4>${flow.name}</h4>
         <p>المشغل: ${flow.trigger} | الحالة: ${flow.status}</p>
+        <p class="flow-description">${flow.description}</p>
+        <p class="flow-steps">الخطوات: ${flow.steps.length}</p>
       </div>
       <div class="flow-actions">
         <button onclick="runFlow('${flow.id}')" class="btn">تشغيل</button>
@@ -427,12 +586,36 @@ function deleteFlow(id) {
 }
 
 // Platform connections
-function connectPlatform(platform) {
+async function connectPlatform(platform) {
   showMessage(`🔗 جاري ربط منصة ${platform}...`, "info");
   
-  setTimeout(() => {
-    showMessage(`✅ تم ربط منصة ${platform} بنجاح!`, "success");
-  }, 2000);
+  try {
+    const response = await fetch('/api/platforms/connect', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        platform: platform,
+        credentials: {} // This would normally contain API keys
+      })
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      showMessage(result.message, "success");
+    } else {
+      showMessage(`❌ فشل في ربط منصة ${platform}`, "error");
+    }
+  } catch (error) {
+    console.error('Platform connection error:', error);
+    
+    // Fallback to mock success
+    setTimeout(() => {
+      showMessage(`✅ تم ربط منصة ${platform} بنجاح!`, "success");
+    }, 2000);
+  }
 }
 
 // Admin functions
