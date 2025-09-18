@@ -41,8 +41,9 @@ export async function saveRemoteConfig(patch){
 }
 
 // ---- 140 AI Agents registry ----
-import agents from "./agents.json" assert { type: "json" };
-export const AGENTS = agents.agents.map(a => ({...a, status: a.status || "idle"}));
+const agentsResponse = await fetch('./agents.json');
+const agentsData = await agentsResponse.json();
+export const AGENTS = agentsData.agents.map(a => ({...a, status: a.status || "idle"}));
 
 export function runAgentById(id, input){
   const a = AGENTS.find(x=>x.id===id);

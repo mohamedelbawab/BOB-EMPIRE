@@ -1,16 +1,4 @@
 
-import { 
-  AGENTS, 
-  superAI, 
-  runAgentById, 
-  addAgent, 
-  removeAgent, 
-  connectAllGlobal,
-  loadRemoteConfig,
-  saveRemoteConfig,
-  CONFIG
-} from './BOB_EMPIRE_FINAL.js';
-
 // Global state
 let isRecording = false;
 let recognition = null;
@@ -19,10 +7,13 @@ let currentSettings = {};
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log("🚀 Bob Empire initialized");
+  console.log("🚀 Bob Empire UI initialized");
+  
+  // Wait for Bob Engine to initialize
+  await window.initializeBobEmpire();
   
   // Load settings
-  currentSettings = await loadRemoteConfig();
+  currentSettings = await window.loadRemoteConfig();
   
   // Initialize speech recognition and synthesis
   initializeSpeech();
@@ -39,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Update settings UI
   updateSettingsUI();
   
-  console.log("✅ Application fully loaded with", AGENTS.length, "agents");
+  console.log("✅ Application fully loaded with", window.BobAgents.length, "agents");
 });
 
 // Tab management
@@ -78,7 +69,7 @@ window.sendMessage = async function() {
     
     // Check if it's a command
     if (message.startsWith('/')) {
-      response = await superAI(message);
+      response = await window.superAI(message);
     } else {
       // Generate conversational response in Egyptian dialect
       response = await generateEgyptianResponse(message);
@@ -98,6 +89,7 @@ window.sendMessage = async function() {
 
 // Generate Egyptian dialect responses
 async function generateEgyptianResponse(message) {
+  const agents = window.BobAgents || [];
   const responses = [
     "أهلاً بيك! فهمت كلامك وهاعمل اللي تطلبه دلوقتي. 😊",
     "حاضر يا فندم! أنا هنا عشان أساعدك في أي حاجة. إيه رأيك نبدأ؟ 🚀",
@@ -111,7 +103,7 @@ async function generateEgyptianResponse(message) {
   
   // Check for specific keywords and respond accordingly
   if (message.includes('وكيل') || message.includes('agent')) {
-    return `حاضر! عندنا ${AGENTS.length} وكيل شغالين دلوقتي. عايز أعمل إيه بالظبط مع الوكلاء؟ 🤖`;
+    return `حاضر! عندنا ${agents.length} وكيل شغالين دلوقتي. عايز أعمل إيه بالظبط مع الوكلاء؟ 🤖`;
   }
   
   if (message.includes('منصة') || message.includes('platform')) {
@@ -123,7 +115,8 @@ async function generateEgyptianResponse(message) {
   }
   
   if (message.includes('تيربو') || message.includes('turbo')) {
-    const status = CONFIG.turbo ? "شغال" : "مقفول";
+    const config = window.BobConfig || { turbo: false };
+    const status = config.turbo ? "شغال" : "مقفول";
     return `وضع التيربو حالياً ${status}. عايز أغيره؟ 🚀`;
   }
   
@@ -223,13 +216,20 @@ function speakText(text) {
 // Agent management
 function loadAgents() {
   const agentsList = document.getElementById('agentsList');
-  const activeCount = AGENTS.filter(a => a.status === 'idle' || a.status === 'running').length;
-  const pausedCount = AGENTS.length - activeCount;
+  const agents = window.BobAgents || [];
+  
+  if (agents.length === 0) {
+    agentsList.innerHTML = '<p>جاري تحميل الوكلاء...</p>';
+    return;
+  }
+  
+  const activeCount = agents.filter(a => a.status === 'idle' || a.status === 'running').length;
+  const pausedCount = agents.length - activeCount;
   
   document.getElementById('activeAgents').textContent = activeCount;
   document.getElementById('pausedAgents').textContent = pausedCount;
   
-  agentsList.innerHTML = AGENTS.map(agent => `
+  agentsList.innerHTML = agents.map(agent => `
     <div class="agent-card ${agent.status === 'running' ? 'active' : ''}" data-agent-id="${agent.id}">
       <h4>🤖 ${agent.name}</h4>
       <p>الحالة: ${getStatusInArabic(agent.status)}</p>
@@ -253,7 +253,7 @@ function getStatusInArabic(status) {
 }
 
 window.runAgent = async function(id) {
-  const result = runAgentById(id, 'تم تشغيل الوكيل من الواجهة');
+  const result = window.runAgentById(id, 'تم تشغيل الوكيل من الواجهة');
   addChatMessage(`🤖 ${result}`, 'ai');
   loadAgents(); // Refresh agents display
 };
@@ -261,7 +261,7 @@ window.runAgent = async function(id) {
 window.addNewAgent = function() {
   const name = prompt('اسم الوكيل الجديد:');
   if (name) {
-    const agent = addAgent({ name, role: 'مخصص', status: 'idle' });
+    const agent = window.addAgent({ name, role: 'مخصص', status: 'idle' });
     addChatMessage(`✅ تم إضافة الوكيل "${agent.name}" بنجاح!`, 'ai');
     loadAgents();
   }
@@ -269,7 +269,7 @@ window.addNewAgent = function() {
 
 window.removeAgentFromUI = function(id) {
   if (confirm('هل أنت متأكد من حذف هذا الوكيل؟')) {
-    removeAgent(id);
+    window.removeAgent(id);
     addChatMessage(`🗑️ تم حذف الوكيل بنجاح!`, 'ai');
     loadAgents();
   }
@@ -330,7 +330,7 @@ window.connectAllPlatforms = async function() {
   addChatMessage('🔄 جاري ربط جميع المنصات العالمية...', 'ai');
   
   try {
-    await connectAllGlobal();
+    await window.connectAllGlobal();
     addChatMessage('✅ تم ربط جميع المنصات العالمية بنجاح! 🌐', 'ai');
     
     // Update UI to show all platforms as connected
@@ -346,7 +346,7 @@ window.connectAllPlatforms = async function() {
 // n8n Integration
 function loadFlows() {
   const flowsList = document.getElementById('flowsList');
-  const flows = [
+  const flows = window.BobFlows || [
     { id: 'flow_1', name: 'أتمتة الطلبات', status: 'active' },
     { id: 'flow_2', name: 'مزامنة المخزون', status: 'paused' },
     { id: 'flow_3', name: 'إشعارات العملاء', status: 'active' },
@@ -399,8 +399,9 @@ window.editFlow = function(flowId) {
 
 // Settings management
 function updateSettingsUI() {
-  document.getElementById('adminPassword').value = CONFIG.adminPassword;
-  document.getElementById('turboMode').checked = CONFIG.turbo;
+  const config = window.BobConfig || { adminPassword: 'Bob@Bob0000', turbo: false };
+  document.getElementById('adminPassword').value = config.adminPassword;
+  document.getElementById('turboMode').checked = config.turbo;
   document.getElementById('voiceLanguage').value = currentSettings.voiceLanguage || 'ar-EG';
   document.getElementById('supabaseUrl').value = currentSettings.supabaseUrl || '';
   document.getElementById('supabaseKey').value = currentSettings.supabaseKey || '';
@@ -416,11 +417,13 @@ window.saveSettings = async function() {
   };
   
   // Update CONFIG
-  CONFIG.adminPassword = newSettings.adminPassword;
-  CONFIG.turbo = newSettings.turbo;
+  if (window.BobConfig) {
+    window.BobConfig.adminPassword = newSettings.adminPassword;
+    window.BobConfig.turbo = newSettings.turbo;
+  }
   
   // Save to remote config
-  currentSettings = await saveRemoteConfig(newSettings);
+  currentSettings = await window.saveRemoteConfig(newSettings);
   
   addChatMessage('✅ تم حفظ الإعدادات بنجاح!', 'ai');
   
