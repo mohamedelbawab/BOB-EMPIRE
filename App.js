@@ -81,14 +81,14 @@ export default function App() {
       <div className="app-container">
         <div className="login-container">
           <div className="login-header">
-            <div className="app-icon">👑</div>
+            <div className="app-icon">{'👑'}</div>
             <h1>Bob Empire</h1>
             <p className="app-subtitle">منصة تجارة عالمية يقودها الذكاء الاصطناعي</p>
             <p className="app-subtitle-en">Global AI-Powered Commerce Platform</p>
           </div>
           
           <div className="mobile-ready-notice">
-            <span className="mobile-icon">📱</span>
+            <span className="mobile-icon">{'📱'}</span>
             <span>Now fully mobile-ready!</span>
           </div>
 
@@ -112,7 +112,7 @@ export default function App() {
               />
             </div>
             <button onClick={login} className="login-btn">
-              🔐 Login
+              {'🔐'} Login
             </button>
             
             {message && (
@@ -149,7 +149,7 @@ export default function App() {
       <header className="app-header">
         <div className="header-content">
           <div className="header-left">
-            <div className="app-logo">👑</div>
+            <div className="app-logo">{'👑'}</div>
             <div className="app-info">
               <h1>Bob Empire</h1>
               <span className="user-info">Welcome, {user.email}</span>
@@ -161,21 +161,21 @@ export default function App() {
               onClick={() => setShowSettings(true)}
               title="Settings"
             >
-              ⚙️
+              {'⚙️'}
             </button>
             <button 
               className="header-btn"
               onClick={() => setShowDeviceLink(true)}
               title="Device Link"
             >
-              🔗
+              {'🔗'}
             </button>
             <button 
               className="header-btn logout-btn"
               onClick={logout}
               title="Logout"
             >
-              🚪
+              {'🚪'}
             </button>
           </div>
         </div>

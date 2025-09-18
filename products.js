@@ -1,5 +1,5 @@
 // products.js
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
 let products = [
@@ -18,4 +18,4 @@ router.post("/", (req, res) => {
   res.json(newProduct);
 });
 
-module.exports = { productsRouter: router };
+export { router as productsRouter };

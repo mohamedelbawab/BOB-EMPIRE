@@ -4,10 +4,35 @@ import './WelcomeMessage.css';
 const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
   const deviceType = window.innerWidth <= 768 ? 'mobile' : 'desktop';
   
+  // Define emoji constants to avoid build issues
+  const emojis = {
+    crown: '\u{1F451}',
+    mobile: '\u{1F4F1}',
+    desktop: '\u{1F4BB}',
+    settings: '\u{2699}\u{FE0F}',
+    link: '\u{1F517}',
+    robot: '\u{1F916}',
+    globe: '\u{1F30D}',
+    chat: '\u{1F4AC}',
+    rocket: '\u{1F680}',
+    chart: '\u{1F4CA}',
+    lightning: '\u{26A1}',
+    sparkles: '\u{2728}',
+    sync: '\u{1F504}',
+    lock: '\u{1F512}',
+    fast: '\u{26A1}',
+    checkmark: '\u{2705}',
+    wave: '\u{1F44B}'
+  };
+  
+  const welcomeIcon = '\u{1F451}'; // Crown emoji
+  const mobileIcon = '\u{1F4F1}'; // Mobile phone emoji
+  const desktopIcon = '\u{1F4BB}'; // Desktop computer emoji
+
   return (
     <div className="welcome-message">
       <div className="welcome-header">
-        <div className="welcome-icon">👑</div>
+        <div className="welcome-icon">{emojis.crown}</div>
         <h1>Welcome to Bob Empire</h1>
         <p className="welcome-subtitle">
           منصة تجارة عالمية يقودها الذكاء الاصطناعي
@@ -18,7 +43,7 @@ const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
       </div>
 
       <div className="mobile-ready-banner">
-        <div className="banner-icon">📱</div>
+        <div className="banner-icon">{emojis.mobile}</div>
         <div className="banner-content">
           <h3>Now Mobile Ready!</h3>
           <p>Full control from any device - phone, tablet, or desktop</p>
@@ -27,7 +52,7 @@ const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
 
       <div className="features-grid">
         <div className="feature-card">
-          <div className="feature-icon">⚙️</div>
+          <div className="feature-icon">{emojis.settings}</div>
           <h3>Easy Management</h3>
           <p>Configure APIs, agents, and platforms directly from the app on any device</p>
           <button className="feature-btn" onClick={onOpenSettings}>
@@ -36,7 +61,7 @@ const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
         </div>
 
         <div className="feature-card">
-          <div className="feature-icon">🔗</div>
+          <div className="feature-icon">{emojis.link}</div>
           <h3>Cross-Device Sync</h3>
           <p>Link your mobile and desktop devices for seamless access everywhere</p>
           <button className="feature-btn" onClick={onOpenDeviceLink}>
@@ -45,7 +70,7 @@ const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
         </div>
 
         <div className="feature-card">
-          <div className="feature-icon">🤖</div>
+          <div className="feature-icon">{emojis.robot}</div>
           <h3>AI Agents</h3>
           <p>140+ AI agents ready to manage your global commerce operations</p>
           <button className="feature-btn">
@@ -54,7 +79,7 @@ const WelcomeMessage = ({ user, onOpenSettings, onOpenDeviceLink }) => {
         </div>
 
         <div className="feature-card">
-          <div className="feature-icon">🌍</div>
+          <div className="feature-icon">{emojis.globe}</div>
           <h3>Global Platforms</h3>
           <p>Connect to Amazon, Shopify, AliExpress, and 30+ platforms worldwide</p>
           <button className="feature-btn">

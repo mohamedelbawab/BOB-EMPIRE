@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({
+    jsxRuntime: 'automatic'
+  })],
   server: {
     port: 5173,
     host: true
@@ -17,5 +19,8 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  esbuild: {
+    jsx: 'automatic'
   }
 })
