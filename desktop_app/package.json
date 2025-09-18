@@ -1,0 +1,65 @@
+{
+  "name": "bob-empire-desktop",
+  "version": "2.2.0",
+  "description": "Bob Empire Desktop - Global AI Commerce Platform",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac", 
+    "build-linux": "electron-builder --linux",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "Bob Empire",
+    "AI Commerce",
+    "E-commerce",
+    "Desktop App",
+    "Electron"
+  ],
+  "author": "Bob Empire Team",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "ws": "^8.14.0",
+    "sqlite3": "^5.1.6",
+    "node-notifier": "^10.0.1",
+    "qrcode": "^1.5.3",
+    "express": "^4.18.2"
+  },
+  "build": {
+    "appId": "com.bobempire.desktop",
+    "productName": "Bob Empire",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.business",
+      "icon": "assets/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

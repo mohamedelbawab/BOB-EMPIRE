@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Empire Desktop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Arabic support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-container">
+                <div class="crown">👑</div>
+                <h1>Bob Empire</h1>
+                <p>منصة التجارة العالمية بالذكاء الاصطناعي</p>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-text">جاري تحميل التطبيق...</p>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app-container" style="display: none;">
+        <!-- Title Bar (Custom) -->
+        <div class="title-bar">
+            <div class="title-bar-content">
+                <div class="title-bar-left">
+                    <div class="app-icon">👑</div>
+                    <span class="app-title">Bob Empire</span>
+                </div>
+                <div class="title-bar-center">
+                    <div class="connection-status" id="connectionStatus">
+                        <i class="fas fa-cloud" id="connectionIcon"></i>
+                        <span id="connectionText">غير متصل</span>
+                    </div>
+                </div>
+                <div class="title-bar-right">
+                    <button class="title-bar-btn" id="minimizeBtn">
+                        <i class="fas fa-window-minimize"></i>
+                    </button>
+                    <button class="title-bar-btn" id="maximizeBtn">
+                        <i class="fas fa-window-maximize"></i>
+                    </button>
+                    <button class="title-bar-btn close" id="closeBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name" id="userName">مستخدم تجريبي</div>
+                            <div class="user-status">Desktop</div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item active" data-view="dashboard">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>لوحة التحكم</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="chat">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-comments"></i>
+                                <span>دردشة الذكاء الاصطناعي</span>
+                                <div class="nav-badge" id="chatBadge" style="display: none;">0</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="store">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-store"></i>
+                                <span>إدارة المتجر</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="agents">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-robot"></i>
+                                <span>الوكلاء الذكية</span>
+                                <div class="nav-badge agents-count">140</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="platforms">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-link"></i>
+                                <span>ربط المنصات</span>
+                                <div class="nav-badge platforms-count">35</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="analytics">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>التحليلات</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="orders">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>الطلبات</span>
+                                <div class="nav-badge orders-count">12</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="sync">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>المزامنة</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-view="settings">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>الإعدادات</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" id="syncBtn" title="مزامنة البيانات">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </button>
+                        <button class="quick-action-btn" id="qrBtn" title="ربط جهاز">
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                        <button class="quick-action-btn" id="themeBtn" title="تغيير المظهر">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view active">
+                    <div class="view-header">
+                        <h1>لوحة التحكم الرئيسية</h1>
+                        <div class="view-actions">
+                            <button class="btn btn-primary" id="refreshBtn">
+                                <i class="fas fa-refresh"></i>
+                                تحديث
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="totalOrders">12</div>
+                                    <div class="stat-label">إجمالي الطلبات</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="totalRevenue">$3,500</div>
+                                    <div class="stat-label">الإيرادات</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="activeAgents">140</div>
+                                    <div class="stat-label">الوكلاء النشطة</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="connectedPlatforms">35</div>
+                                    <div class="stat-label">المنصات المرتبطة</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="dashboard-section">
+                            <h2>النشاط الحديث</h2>
+                            <div class="activity-list" id="activityList">
+                                <!-- Activity items will be populated here -->
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="dashboard-section">
+                            <h2>إجراءات سريعة</h2>
+                            <div class="quick-actions-grid">
+                                <button class="quick-action-card" data-action="new-product">
+                                    <i class="fas fa-plus"></i>
+                                    <span>إضافة منتج جديد</span>
+                                </button>
+                                <button class="quick-action-card" data-action="run-agent">
+                                    <i class="fas fa-play"></i>
+                                    <span>تشغيل وكيل</span>
+                                </button>
+                                <button class="quick-action-card" data-action="connect-platform">
+                                    <i class="fas fa-link"></i>
+                                    <span>ربط منصة جديدة</span>
+                                </button>
+                                <button class="quick-action-card" data-action="ai-chat">
+                                    <i class="fas fa-comments"></i>
+                                    <span>دردشة الذكاء الاصطناعي</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat View -->
+                <div id="chat-view" class="view">
+                    <div class="view-header">
+                        <h1>دردشة الذكاء الاصطناعي</h1>
+                        <div class="view-actions">
+                            <button class="btn btn-secondary" id="clearChatBtn">
+                                <i class="fas fa-trash"></i>
+                                مسح المحادثة
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Chat messages will be populated here -->
+                        </div>
+                        <div class="chat-input-container">
+                            <div class="chat-input-wrapper">
+                                <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا..." class="chat-input">
+                                <button id="voiceBtn" class="voice-btn" title="أمر صوتي">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button id="sendBtn" class="send-btn" title="إرسال">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other views will be added here -->
+                <div id="store-view" class="view">
+                    <div class="view-header">
+                        <h1>إدارة المتجر</h1>
+                    </div>
+                    <div class="view-content">
+                        <p>شاشة إدارة المتجر قيد التطوير...</p>
+                    </div>
+                </div>
+
+                <div id="agents-view" class="view">
+                    <div class="view-header">
+                        <h1>الوكلاء الذكية</h1>
+                    </div>
+                    <div class="view-content">
+                        <div id="agentsList" class="agents-grid">
+                            <!-- Agents will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="platforms-view" class="view">
+                    <div class="view-header">
+                        <h1>ربط المنصات العالمية</h1>
+                    </div>
+                    <div class="view-content">
+                        <div id="platformsList" class="platforms-grid">
+                            <!-- Platforms will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="analytics-view" class="view">
+                    <div class="view-header">
+                        <h1>التحليلات والتقارير</h1>
+                    </div>
+                    <div class="view-content">
+                        <p>شاشة التحليلات قيد التطوير...</p>
+                    </div>
+                </div>
+
+                <div id="orders-view" class="view">
+                    <div class="view-header">
+                        <h1>إدارة الطلبات</h1>
+                    </div>
+                    <div class="view-content">
+                        <p>شاشة إدارة الطلبات قيد التطوير...</p>
+                    </div>
+                </div>
+
+                <div id="sync-view" class="view">
+                    <div class="view-header">
+                        <h1>مزامنة البيانات</h1>
+                    </div>
+                    <div class="view-content">
+                        <div class="sync-controls">
+                            <div class="sync-status" id="syncStatus">
+                                <div class="sync-indicator"></div>
+                                <span>حالة المزامنة: غير متصل</span>
+                            </div>
+                            <div class="sync-actions">
+                                <button class="btn btn-primary" id="manualSyncBtn">
+                                    <i class="fas fa-sync-alt"></i>
+                                    مزامنة يدوية
+                                </button>
+                                <button class="btn btn-secondary" id="showQRBtn">
+                                    <i class="fas fa-qrcode"></i>
+                                    عرض رمز QR
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sync-log" id="syncLog">
+                            <!-- Sync log will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settings-view" class="view">
+                    <div class="view-header">
+                        <h1>الإعدادات</h1>
+                    </div>
+                    <div class="view-content">
+                        <div class="settings-sections">
+                            <div class="settings-section">
+                                <h3>إعدادات عامة</h3>
+                                <div class="setting-item">
+                                    <label>اللغة</label>
+                                    <select id="languageSelect">
+                                        <option value="ar">العربية</option>
+                                        <option value="en">English</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <label>المظهر</label>
+                                    <select id="themeSelect">
+                                        <option value="dark">داكن</option>
+                                        <option value="light">فاتح</option>
+                                        <option value="auto">تلقائي</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ربط جهاز جديد</h2>
+                <button class="modal-close" id="closeQRModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="qr-container">
+                    <div id="qrCode" class="qr-code"></div>
+                    <p>امسح هذا الرمز من الجهاز الآخر لربطه</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/components/chat.js"></script>
+    <script src="js/components/agents.js"></script>
+    <script src="js/components/platforms.js"></script>
+    <script src="js/components/sync.js"></script>
+    <script src="js/utils/websocket.js"></script>
+    <script src="js/utils/storage.js"></script>
+</body>
+</html>

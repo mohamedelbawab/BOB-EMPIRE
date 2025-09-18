@@ -1,0 +1,177 @@
+/* Dark Theme */
+.dark-theme {
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #2a2a40;
+    --bg-tertiary: #363651;
+    --bg-sidebar: #181825;
+    --bg-hover: rgba(255, 255, 255, 0.1);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #808080;
+    
+    --border-color: #404040;
+    
+    /* Dark theme gradients */
+    --bg-gradient: linear-gradient(135deg, #1e1e2e, #2a2a40);
+}
+
+/* Light Theme */
+.light-theme {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-sidebar: #f1f3f4;
+    --bg-hover: rgba(0, 0, 0, 0.05);
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    
+    --border-color: #e5e7eb;
+    
+    /* Light theme gradients */
+    --bg-gradient: linear-gradient(135deg, #ffffff, #f8f9fa);
+}
+
+/* Auto theme (follows system preference) */
+@media (prefers-color-scheme: dark) {
+    .auto-theme {
+        --bg-primary: #1e1e2e;
+        --bg-secondary: #2a2a40;
+        --bg-tertiary: #363651;
+        --bg-sidebar: #181825;
+        --bg-hover: rgba(255, 255, 255, 0.1);
+        
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-muted: #808080;
+        
+        --border-color: #404040;
+        
+        --bg-gradient: linear-gradient(135deg, #1e1e2e, #2a2a40);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .auto-theme {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #e9ecef;
+        --bg-sidebar: #f1f3f4;
+        --bg-hover: rgba(0, 0, 0, 0.05);
+        
+        --text-primary: #1a1a1a;
+        --text-secondary: #6b7280;
+        --text-muted: #9ca3af;
+        
+        --border-color: #e5e7eb;
+        
+        --bg-gradient: linear-gradient(135deg, #ffffff, #f8f9fa);
+    }
+}
+
+/* Theme transition */
+body {
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Theme-specific adjustments */
+.dark-theme .title-bar {
+    background: var(--bg-primary);
+    border-bottom-color: var(--border-color);
+}
+
+.light-theme .title-bar {
+    background: var(--bg-primary);
+    border-bottom-color: var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .sidebar {
+    background: var(--bg-sidebar);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .sidebar {
+    background: var(--bg-sidebar);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Card themes */
+.dark-theme .card {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+.light-theme .card {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Input themes */
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.light-theme input,
+.light-theme select,
+.light-theme textarea {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Modal themes */
+.dark-theme .modal-content {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.light-theme .modal-content {
+    background: var(--bg-primary);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+}
+
+/* Dark theme icon rotation */
+.dark-theme .theme-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Smooth theme transition for all elements */
+*,
+*::before,
+*::after {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: var(--transition-normal);
+    transition-timing-function: ease;
+}
