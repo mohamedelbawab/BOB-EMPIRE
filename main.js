@@ -1,6 +1,6 @@
 
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
-import { superAI, getDashboard, testSupabaseConnection, AGENTS, CONFIG, loadAgentsFromFile, initializeSupabase } from './BOB_EMPIRE_FINAL.js';
+import { superAI, getDashboard, testSupabaseConnection, AGENTS, CONFIG, loadAgentsFromFile, initializeSupabase, loadFlowsFromFile, FLOWS } from './BOB_EMPIRE_FINAL.js';
 
 console.log("🚀 Bob Empire initialized");
 console.log("🔧 Supabase URL:", SUPABASE_URL);
@@ -14,9 +14,10 @@ async function initializeApp() {
   // Initialize Supabase
   await initializeSupabase();
   
-  // Load agents from file
+  // Load agents and flows from files
   await loadAgentsFromFile();
-  console.log(`📊 Loaded ${AGENTS.length} agents`);
+  await loadFlowsFromFile();
+  console.log(`📊 Loaded ${AGENTS.length} agents and ${FLOWS.length} flows`);
 }
 
 // UI Elements
@@ -65,6 +66,15 @@ function createUI() {
             <button onclick="quickCommand('/connect all')" class="btn btn-success">Connect All Platforms</button>
             <button onclick="quickCommand('/list-agents 5')" class="btn btn-neutral">List Agents</button>
             <button onclick="quickCommand('/status')" class="btn btn-warning">System Status</button>
+            <button onclick="quickCommand('/flows list')" class="btn btn-primary">List Flows</button>
+            <button onclick="runComprehensiveTest()" class="btn btn-secondary">🧪 Run Tests</button>
+          </div>
+        </div>
+
+        <div class="testing-section" style="display: none;" id="testing-section">
+          <h3>🧪 Comprehensive Testing</h3>
+          <div id="test-results" class="test-results">
+            <!-- Test results will appear here -->
           </div>
         </div>
       </div>
@@ -124,6 +134,11 @@ async function executeCommand() {
   try {
     const result = await superAI(command);
     showMessage(result, 'success');
+    
+    // Refresh dashboard after certain commands
+    if (command.includes('/turbo') || command.includes('/status')) {
+      setTimeout(loadDashboard, 100);
+    }
   } catch (error) {
     showMessage(`❌ Error: ${error.message}`, 'error');
   }
@@ -132,6 +147,81 @@ async function executeCommand() {
 async function quickCommand(command) {
   document.getElementById('command-input').value = command;
   await executeCommand();
+}
+
+// Comprehensive testing function
+async function runComprehensiveTest() {
+  const testSection = document.getElementById('testing-section');
+  const testResults = document.getElementById('test-results');
+  
+  testSection.style.display = 'block';
+  testResults.innerHTML = '<div class="text-blue">🧪 Running comprehensive tests...</div>';
+  
+  const tests = [
+    { name: "Supabase Connection", command: "/test-supabase" },
+    { name: "Agent List", command: "/list-agents 3" },
+    { name: "Flow List", command: "/flows list 3" },
+    { name: "Agent Execution", command: "/run 1 Test agent functionality" },
+    { name: "Flow Creation", command: "/flows create Test Flow" },
+    { name: "Platform Connection", command: "/connect amazon" },
+    { name: "Turbo Toggle", command: "/turbo off" },
+    { name: "System Status", command: "/status" },
+    { name: "Help Command", command: "/help" }
+  ];
+  
+  let results = [];
+  
+  for (let i = 0; i < tests.length; i++) {
+    const test = tests[i];
+    try {
+      const result = await superAI(test.command);
+      const success = !result.includes('❌') && !result.includes('Unknown command');
+      results.push({
+        name: test.name,
+        command: test.command,
+        success,
+        result: result.substring(0, 100) + (result.length > 100 ? '...' : '')
+      });
+      
+      // Update progress
+      testResults.innerHTML = `
+        <div class="text-blue">🧪 Testing... (${i + 1}/${tests.length})</div>
+        ${results.map(r => `
+          <div class="${r.success ? 'text-green' : 'text-red'}">
+            ${r.success ? '✅' : '❌'} ${r.name}: ${r.result}
+          </div>
+        `).join('')}
+      `;
+      
+      // Small delay between tests
+      await new Promise(resolve => setTimeout(resolve, 200));
+    } catch (error) {
+      results.push({
+        name: test.name,
+        command: test.command,
+        success: false,
+        result: `Error: ${error.message}`
+      });
+    }
+  }
+  
+  // Final results
+  const successCount = results.filter(r => r.success).length;
+  const totalTests = results.length;
+  
+  testResults.innerHTML = `
+    <div class="test-summary ${successCount === totalTests ? 'text-green' : 'text-yellow'}">
+      🧪 Tests Complete: ${successCount}/${totalTests} passed
+    </div>
+    ${results.map(r => `
+      <div class="${r.success ? 'text-green' : 'text-red'}">
+        ${r.success ? '✅' : '❌'} ${r.name}: ${r.result}
+      </div>
+    `).join('')}
+  `;
+  
+  showMessage(`🧪 Comprehensive testing complete: ${successCount}/${totalTests} tests passed`, 
+             successCount === totalTests ? 'success' : 'warning');
 }
 
 // Dashboard functions
@@ -157,8 +247,26 @@ async function loadDashboard() {
         <span class="stat-value">${dashboard.turbo ? 'ON' : 'OFF'}</span>
       </div>
     `;
+    
+    // Update header status
+    updateHeaderStatus(dashboard);
   } catch (error) {
     showMessage(`❌ Failed to load dashboard: ${error.message}`, 'error');
+  }
+}
+
+// Update header status indicators
+function updateHeaderStatus(dashboard) {
+  const turboStatus = document.getElementById('turbo-status');
+  const agentCount = document.getElementById('agent-count');
+  
+  if (turboStatus) {
+    turboStatus.textContent = `Turbo: ${dashboard.turbo ? 'ON' : 'OFF'}`;
+    turboStatus.className = dashboard.turbo ? 'status-connected' : '';
+  }
+  
+  if (agentCount) {
+    agentCount.textContent = `Agents: ${dashboard.activeAgents}`;
   }
 }
 
@@ -203,3 +311,4 @@ window.signup = signup;
 window.guestMode = guestMode;
 window.executeCommand = executeCommand;
 window.quickCommand = quickCommand;
+window.runComprehensiveTest = runComprehensiveTest;

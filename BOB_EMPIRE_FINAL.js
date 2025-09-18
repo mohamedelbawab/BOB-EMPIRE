@@ -106,6 +106,54 @@ export async function loadAgentsFromFile() {
   }
 }
 
+// ---- Flow Management ----
+export const FLOWS = [];
+
+// Load flows from JSON file
+export async function loadFlowsFromFile() {
+  try {
+    const response = await fetch('./flows.json');
+    const flowsData = await response.json();
+    if (Array.isArray(flowsData)) {
+      FLOWS.length = 0;
+      FLOWS.push(...flowsData);
+      console.log(`📊 Loaded ${FLOWS.length} flows`);
+    }
+  } catch (e) {
+    console.log("Using default flows (flows.json not loaded)");
+    // Add some default flows
+    FLOWS.push(
+      { id: "flow_marketing", name: "Marketing Campaign", trigger: "manual", steps: ["analyze_market", "create_content", "deploy_campaign"] },
+      { id: "flow_customer_support", name: "Customer Support", trigger: "auto", steps: ["receive_inquiry", "analyze_intent", "respond"] },
+      { id: "flow_inventory", name: "Inventory Management", trigger: "scheduled", steps: ["check_stock", "update_listings", "reorder_if_needed"] }
+    );
+  }
+}
+
+export function runFlow(flowId) {
+  const flow = FLOWS.find(f => f.id === flowId);
+  if (!flow) return `❌ Flow ${flowId} not found`;
+  
+  // Simulate flow execution
+  const steps = flow.steps || [];
+  return `🔄 Running flow "${flow.name}" with ${steps.length} steps: ${steps.join(' → ')}`;
+}
+
+export function addFlow(flow) {
+  flow.id = flow.id || `flow_${Date.now()}`;
+  FLOWS.push(flow);
+  return flow;
+}
+
+export function removeFlow(flowId) {
+  const index = FLOWS.findIndex(f => f.id === flowId);
+  if (index >= 0) {
+    FLOWS.splice(index, 1);
+    return true;
+  }
+  return false;
+}
+
 export function runAgentById(id, input){
   const a = AGENTS.find(x=>x.id===id);
   if(!a) return `❌ Agent ${id} not found`;
@@ -187,7 +235,22 @@ export async function superAI(command){
   
   // Flow management (placeholder)
   if(cmd==="/flows"){
-    return "🔄 Flow management: /flows list | /flows run <id> | /flows create <name>";
+    const subCmd = parts[1];
+    if (subCmd === "list") {
+      const count = parts[2] ? Number(parts[2]) : 5;
+      const list = FLOWS.slice(0, count).map(f => `#${f.id}: ${f.name} (${f.trigger})`).join("\n");
+      return `🔄 Flows (showing ${Math.min(count, FLOWS.length)}/${FLOWS.length}):\n${list}`;
+    }
+    if (subCmd === "run") {
+      const flowId = parts[2];
+      return runFlow(flowId);
+    }
+    if (subCmd === "create") {
+      const name = parts.slice(2).join(" ") || "New Flow";
+      const flow = addFlow({ name, trigger: "manual", steps: [] });
+      return `✅ Created flow "${flow.name}" (#${flow.id})`;
+    }
+    return "🔄 Flow commands: /flows list [count] | /flows run <id> | /flows create <name>";
   }
   
   // Help command
@@ -196,7 +259,8 @@ export async function superAI(command){
 🤖 Agents: /run <id> <text> | /add-agent <name> | /remove-agent <id> | /list-agents [count]
 🔗 Platforms: /connect all | /connect <platform>
 ⚙️ System: /turbo on|off | /status | /test-supabase
-🔄 Flows: /flows | /help`;
+🔄 Flows: /flows list [count] | /flows run <id> | /flows create <name>
+❓ Help: /help`;
   }
   
   return "❓ Unknown command. Type /help for available commands.";
