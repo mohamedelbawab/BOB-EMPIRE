@@ -18,8 +18,24 @@ done
 
 # Test local server
 echo "🌐 Starting local test server..."
-python3 -m http.server 8001 &
-server_pid=$!
+
+# Check for python3, python, or http-server
+if command -v python3 >/dev/null 2>&1; then
+    python3 -m http.server 8001 &
+    server_pid=$!
+    server_type="python3"
+elif command -v python >/dev/null 2>&1; then
+    python -m http.server 8001 &
+    server_pid=$!
+    server_type="python"
+elif command -v http-server >/dev/null 2>&1; then
+    http-server -p 8001 &
+    server_pid=$!
+    server_type="http-server"
+else
+    echo "❌ No suitable server found (python3, python, or http-server). Please install one and try again."
+    exit 1
+fi
 sleep 2
 
 # Test app endpoints
