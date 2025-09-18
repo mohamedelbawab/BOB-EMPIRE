@@ -1,7 +1,9 @@
 // auth.js
-const express = require("express");
-const { createClient } = require("@supabase/supabase-js");
-require("dotenv").config();
+import express from "express";
+import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Check if Supabase is properly configured
 let supabase = null;
@@ -84,4 +86,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = { supabaseAuthRouter: router };
+export { router as supabaseAuthRouter };

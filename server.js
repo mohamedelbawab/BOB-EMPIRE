@@ -1,11 +1,15 @@
 // server.js
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const path = require("path");
-const { getAIResponse, runSuperAI } = require("./ai");
-const { supabaseAuthRouter } = require("./auth");
-const { productsRouter } = require("./products");
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+import { getAIResponse, runSuperAI } from "./ai.js";
+import { supabaseAuthRouter } from "./auth.js";
+import { productsRouter } from "./products.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -49,5 +53,6 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
+  console.log(`⚠️ Supabase not configured. Using demo mode.`);
   console.log(`✅ Backend running on http://localhost:${PORT}`);
 });

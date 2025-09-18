@@ -3,125 +3,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bob Empire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Bob Empire - Global AI-Powered Commerce Platform, now mobile-ready with cross-device sync" />
+  <meta name="keywords" content="AI, commerce, mobile, cross-device, global, platform" />
+  <meta name="theme-color" content="#1e1e2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bob Empire" />
+  
+  <title>Bob Empire - Mobile Ready AI Commerce</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    body { 
-      background: linear-gradient(135deg, #1e1e2e, #2a2a40);
-      color: white; 
-      font-family: 'Arial', sans-serif; 
-      text-align: center; 
-      padding: 50px;
+    /* Critical CSS for initial load */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
     }
-    h1 { 
-      font-size: 3em; 
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    .crown { 
-      font-size: 2em; 
-      color: gold; 
-    }
-    .subtitle {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-    button {
-      background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    
+    html, body {
+      height: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1e2e, #2a2a40);
       color: white;
-      border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    
+    #root {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
-    button:active {
-      transform: translateY(0);
+    
+    /* Loading screen */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #1e1e2e, #2a2a40);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      color: white;
+      font-family: 'Inter', sans-serif;
     }
-    .status {
-      margin-top: 30px;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
+    
+    .loading-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
     }
-    #loggedInFeatures {
-      margin-top: 30px;
-      padding: 20px;
-      background: rgba(34, 197, 94, 0.1);
-      border-radius: 12px;
-      border: 1px solid rgba(34, 197, 94, 0.3);
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
     }
-    .demo-section {
-      margin-top: 40px;
-      padding: 20px;
-      background: rgba(59, 130, 246, 0.1);
-      border-radius: 12px;
-      border: 1px solid rgba(59, 130, 246, 0.3);
+    
+    .loading-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(45deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .loading-subtitle {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #333;
+      border-top: 3px solid #6366f1;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .loading-icon {
+        font-size: 3rem;
+      }
+      
+      .loading-text {
+        font-size: 1.3rem;
+      }
+      
+      .loading-subtitle {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>👑 Bob Empire</h1>
-  <p class="subtitle">منصة تجارة عالمية يقودها الذكاء الاصطناعي</p>
-  <p class="subtitle">Global AI-Powered Commerce Platform</p>
-  
-  <div>
-    <button onclick="login()">🔐 Login</button>
-    <button onclick="signup()">📝 Sign Up</button>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-icon">👑</div>
+    <div class="loading-text">Bob Empire</div>
+    <div class="loading-subtitle">Loading mobile-ready AI commerce platform...</div>
+    <div class="loading-spinner"></div>
   </div>
 
-  <div class="demo-section">
-    <h3>🚀 Try AI Features</h3>
-    <p>Test our AI capabilities even before logging in!</p>
-    <button onclick="chatWithAI()">💬 Chat with AI</button>
-    <button onclick="runSuperAI('/help')">🤖 Super AI Help</button>
-    <button onclick="runSuperAI('/status')">📊 System Status</button>
-  </div>
+  <!-- React App Root -->
+  <div id="root"></div>
 
-  <div class="status">
-    <h3>🔧 Configuration Status</h3>
-    <p id="configStatus">Checking configuration...</p>
-  </div>
-
-  <script type="module" src="main.js"></script>
-  
-  <script>
-    // Check server status on page load
-    async function checkStatus() {
-      try {
-        const response = await fetch('http://localhost:3000/api/super-ai', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ command: '/status' })
-        });
-        
-        if (response.ok) {
-          const result = await response.json();
-          document.getElementById('configStatus').innerHTML = 
-            `✅ Server Connected<br><pre style="text-align: left; margin-top: 10px;">${result.reply}</pre>`;
-        } else {
-          throw new Error('Server response not ok');
+  <!-- Scripts -->
+  <script type="module">
+    // Hide loading screen once React app loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          loadingScreen.style.transition = 'opacity 0.5s ease-out';
+          setTimeout(() => {
+            loadingScreen.remove();
+          }, 500);
         }
-      } catch (error) {
-        document.getElementById('configStatus').innerHTML = 
-          '❌ Server Offline - Please start the backend with: npm start';
-      }
+      }, 1000);
+    });
+
+    // Service Worker registration for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
     }
 
-    // Check status when page loads
-    checkStatus();
+    // Viewport height fix for mobile browsers
+    function setViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(setViewportHeight, 100);
+    });
   </script>
+  
+  <!-- React App Entry Point -->
+  <script type="module" src="/main.jsx"></script>
 </body>
 </html>

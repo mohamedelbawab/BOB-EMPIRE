@@ -1,6 +1,8 @@
 // ai.js
-const OpenAI = require('openai');
-require('dotenv').config();
+import OpenAI from 'openai';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Initialize OpenAI client
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({
@@ -91,4 +93,4 @@ async function runSuperAI(command) {
   return await getAIResponse(command);
 }
 
-module.exports = { getAIResponse, runSuperAI };
+export { getAIResponse, runSuperAI };
