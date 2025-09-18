@@ -4,260 +4,260 @@
     "passed": 34,
     "failed": 2,
     "successRate": "94.44",
-    "timestamp": "2025-09-18T23:04:50.324Z"
+    "timestamp": "2025-09-18T23:07:09.045Z"
   },
   "tests": [
     {
       "test": "Server Health Check",
       "status": "PASS",
       "message": "Server is responding correctly",
-      "duration": 22,
-      "timestamp": "2025-09-18T23:04:50.283Z"
+      "duration": 30,
+      "timestamp": "2025-09-18T23:07:08.993Z"
     },
     {
       "test": "File Check: package.json",
       "status": "PASS",
       "message": "File exists (1389 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.993Z"
     },
     {
       "test": "File Check: server.js",
       "status": "PASS",
-      "message": "File exists (1517 bytes)",
+      "message": "File exists (7297 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.993Z"
     },
     {
       "test": "File Check: index.html",
       "status": "PASS",
       "message": "File exists (3536 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: main.js",
       "status": "PASS",
       "message": "File exists (5371 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: config.js",
       "status": "PASS",
       "message": "File exists (378 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: auth.js",
       "status": "PASS",
       "message": "File exists (2901 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: ai.js",
       "status": "PASS",
       "message": "File exists (3379 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: agents.json",
       "status": "PASS",
       "message": "File exists (31534 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.284Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: flows.json",
       "status": "PASS",
       "message": "File exists (12053 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.994Z"
     },
     {
       "test": "File Check: style.css",
       "status": "PASS",
       "message": "File exists (1367 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.995Z"
     },
     {
       "test": "File Check: manifest.json",
       "status": "PASS",
       "message": "File exists (354 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.995Z"
     },
     {
       "test": "File Check: vercel.json",
       "status": "PASS",
       "message": "File exists (452 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.995Z"
     },
     {
       "test": "File Check: .env.production",
       "status": "PASS",
       "message": "File exists (2907 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.995Z"
     },
     {
       "test": "File Check: README.md",
       "status": "PASS",
       "message": "File exists (4491 bytes)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.285Z"
+      "timestamp": "2025-09-18T23:07:08.995Z"
     },
     {
       "test": "POST /api/auth/signup",
       "status": "PASS",
       "message": "API endpoint responding correctly",
-      "duration": 4,
-      "timestamp": "2025-09-18T23:04:50.289Z"
+      "duration": 11,
+      "timestamp": "2025-09-18T23:07:09.006Z"
     },
     {
       "test": "POST /api/auth/login",
       "status": "PASS",
       "message": "API endpoint responding correctly",
-      "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.291Z"
+      "duration": 3,
+      "timestamp": "2025-09-18T23:07:09.010Z"
     },
     {
       "test": "POST /api/ai",
       "status": "PASS",
       "message": "API endpoint responding correctly",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.293Z"
+      "timestamp": "2025-09-18T23:07:09.012Z"
     },
     {
       "test": "POST /api/super-ai",
       "status": "PASS",
       "message": "API endpoint responding correctly",
-      "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.295Z"
+      "duration": 3,
+      "timestamp": "2025-09-18T23:07:09.015Z"
     },
     {
       "test": "GET /api/products",
       "status": "PASS",
       "message": "API endpoint responding correctly",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.297Z"
+      "timestamp": "2025-09-18T23:07:09.017Z"
     },
     {
       "test": "User Signup",
       "status": "PASS",
       "message": "New user registration successful",
-      "duration": 1,
-      "timestamp": "2025-09-18T23:04:50.299Z"
+      "duration": 2,
+      "timestamp": "2025-09-18T23:07:09.019Z"
     },
     {
       "test": "User Login",
       "status": "FAIL",
       "message": "Error: Request failed with status code 400",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.302Z"
+      "timestamp": "2025-09-18T23:07:09.021Z"
     },
     {
       "test": "AI Chat (Arabic)",
       "status": "PASS",
       "message": "Arabic AI response received",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.304Z"
+      "timestamp": "2025-09-18T23:07:09.024Z"
     },
     {
       "test": "Super AI Command: /help",
       "status": "PASS",
       "message": "Command executed successfully",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.306Z"
+      "timestamp": "2025-09-18T23:07:09.026Z"
     },
     {
       "test": "Super AI Command: /status",
       "status": "PASS",
       "message": "Command executed successfully",
-      "duration": 1,
-      "timestamp": "2025-09-18T23:04:50.307Z"
+      "duration": 2,
+      "timestamp": "2025-09-18T23:07:09.028Z"
     },
     {
       "test": "Super AI Command: /info",
       "status": "PASS",
       "message": "Command executed successfully",
-      "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.309Z"
+      "duration": 1,
+      "timestamp": "2025-09-18T23:07:09.030Z"
     },
     {
       "test": "Super AI Command: /connect",
       "status": "PASS",
       "message": "Command executed successfully",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.311Z"
+      "timestamp": "2025-09-18T23:07:09.032Z"
     },
     {
       "test": "Performance: Homepage Load",
       "status": "PASS",
       "message": "Fast response time",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.313Z"
+      "timestamp": "2025-09-18T23:07:09.034Z"
     },
     {
       "test": "Performance: API Health Check",
       "status": "PASS",
       "message": "Fast response time",
       "duration": 2,
-      "timestamp": "2025-09-18T23:04:50.315Z"
+      "timestamp": "2025-09-18T23:07:09.036Z"
     },
     {
       "test": "Performance: Static Assets",
       "status": "PASS",
       "message": "Fast response time",
-      "duration": 1,
-      "timestamp": "2025-09-18T23:04:50.316Z"
+      "duration": 2,
+      "timestamp": "2025-09-18T23:07:09.038Z"
     },
     {
       "test": "Supabase Connection",
       "status": "PASS",
       "message": "Demo mode - Supabase not configured (expected)",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.317Z"
+      "timestamp": "2025-09-18T23:07:09.038Z"
     },
     {
       "test": "Local Storage",
       "status": "PASS",
       "message": "Local storage functionality available",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.317Z"
+      "timestamp": "2025-09-18T23:07:09.038Z"
     },
     {
       "test": "CORS Configuration",
-      "status": "PASS",
-      "message": "CORS headers present",
+      "status": "FAIL",
+      "message": "CORS headers missing",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.318Z"
+      "timestamp": "2025-09-18T23:07:09.040Z"
     },
     {
       "test": "Security Headers",
-      "status": "FAIL",
-      "message": "0/3 security headers present",
+      "status": "PASS",
+      "message": "3/3 security headers present",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.320Z"
+      "timestamp": "2025-09-18T23:07:09.041Z"
     },
     {
       "test": "Arabic Language Support",
       "status": "PASS",
       "message": "Arabic text processing successful",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.322Z"
+      "timestamp": "2025-09-18T23:07:09.043Z"
     },
     {
       "test": "Egyptian Dialect Support",
       "status": "PASS",
       "message": "Egyptian dialect processing successful",
       "duration": 0,
-      "timestamp": "2025-09-18T23:04:50.323Z"
+      "timestamp": "2025-09-18T23:07:09.045Z"
     }
   ]
 }
